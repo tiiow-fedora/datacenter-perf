@@ -1,0 +1,6 @@
+bin/
+obj/
+dist/
+*.user
+# captured profiling runs - keep locally, they are per-machine noise
+logs/
