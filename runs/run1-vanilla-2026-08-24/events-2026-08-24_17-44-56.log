@@ -1,0 +1,89 @@
+﻿# DCProfiler session 2026-08-24_17-44-56
+# spike threshold 50ms, flush 5s
+[0.77] SCENE LOADED 'MainMenu' - counters reset
+[4.38] SCENE LOADED 'BaseScene' - counters reset
+[0.52] SPIKE 513.8ms  frame=1  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[3.82] SPIKE 1398.7ms  frame=204  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[6.38] SPIKE 1512.5ms  frame=260  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[6.98] SPIKE 139.7ms  frame=309  created_since_flush=152 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.34] SPIKE 316.1ms  frame=313  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.50] SPIKE 158.2ms  frame=314  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.56] SPIKE 60.3ms  frame=315  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[7.72] SPIKE 159.1ms  frame=316  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[9.43] CHURN +588 -0 (session +588 -0, tracked-live 588)
+    path x122: Objects/UsableObjects/Switch16CU(Clone)
+    path x120: Objects/UsableObjects/Server.Yellow2(Clone)
+    path x108: Objects/UsableObjects/Server.Blue2(Clone)
+    path x90: Objects/UsableObjects/Server.Purple2(Clone)
+    +NetworkSwitch  id=-126988 scene=Y camDist=12.3 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-127328 scene=Y camDist=11.0 path=Objects/UsableObjects/Switch32xQSFP(Clone)
+    +NetworkSwitch  id=-127924 scene=Y camDist=12.0 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-128264 scene=Y camDist=12.1 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-128604 scene=Y camDist=16.1 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-128940 scene=Y camDist=14.5 path=Objects/UsableObjects/Switch16CU(Clone)
+[9.44] TICKS calls=980 (NetworkSwitch=272 Server=708) cost=2.55ms over 2 frame(s), 2 burst(s), session_calls=980
+    burst cadence: 0.98s
+[14.42] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.39ms over 5 frame(s), 5 burst(s), session_calls=3430
+    burst cadence: 1.01s, 1.01s, 1.00s, 1.01s, 1.01s
+[19.42] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.23ms over 5 frame(s), 5 burst(s), session_calls=5880
+    burst cadence: 1.00s, 1.00s, 1.01s, 1.00s, 1.00s
+[24.43] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.31ms over 5 frame(s), 5 burst(s), session_calls=8330
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.00s, 1.01s
+[29.43] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.32ms over 5 frame(s), 5 burst(s), session_calls=10780
+    burst cadence: 1.00s, 1.01s, 1.01s, 1.00s, 1.01s
+[34.43] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.30ms over 5 frame(s), 5 burst(s), session_calls=13230
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.00s, 1.01s
+[39.44] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.33ms over 5 frame(s), 5 burst(s), session_calls=15680
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.01s, 1.01s
+[44.44] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.20ms over 5 frame(s), 5 burst(s), session_calls=18130
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.00s, 1.00s
+[49.44] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.31ms over 5 frame(s), 5 burst(s), session_calls=20580
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.00s
+[49.68] ===== PHASE MARKER -> still =====
+[52.82] SPIKE 227.3ms  frame=6080  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[52.96] SPIKE 101.1ms  frame=6083  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[53.10] SPIKE 115.0ms  frame=6086  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[54.44] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.27ms over 5 frame(s), 5 burst(s), session_calls=23030
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.12s, 1.00s
+[59.45] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.29ms over 5 frame(s), 5 burst(s), session_calls=25480
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.00s, 1.00s
+[64.45] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.36ms over 5 frame(s), 5 burst(s), session_calls=27930
+    burst cadence: 1.01s, 1.00s, 1.00s, 1.00s, 1.00s
+[69.46] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.37ms over 5 frame(s), 5 burst(s), session_calls=30380
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.01s, 1.01s
+[74.46] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.26ms over 5 frame(s), 5 burst(s), session_calls=32830
+    burst cadence: 1.00s, 1.01s, 1.01s, 1.00s, 1.00s
+[79.47] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.24ms over 5 frame(s), 5 burst(s), session_calls=35280
+    burst cadence: 1.00s, 1.00s, 1.01s, 1.01s, 1.00s
+[84.47] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.23ms over 5 frame(s), 5 burst(s), session_calls=37730
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.00s, 1.00s
+[89.47] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.27ms over 5 frame(s), 5 burst(s), session_calls=40180
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.01s, 1.01s
+[94.48] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.39ms over 5 frame(s), 5 burst(s), session_calls=42630
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.01s, 1.01s
+[99.48] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.24ms over 5 frame(s), 5 burst(s), session_calls=45080
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.00s, 1.00s
+[104.48] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.20ms over 5 frame(s), 5 burst(s), session_calls=47530
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.01s, 1.01s
+[109.48] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.32ms over 5 frame(s), 5 burst(s), session_calls=49980
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.01s, 1.01s
+[114.49] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.20ms over 5 frame(s), 5 burst(s), session_calls=52430
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.01s, 1.00s
+[117.41] ===== PHASE MARKER -> walk =====
+[119.49] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.25ms over 5 frame(s), 5 burst(s), session_calls=54880
+    burst cadence: 1.01s, 1.00s, 1.00s, 1.00s, 1.01s
+[124.49] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.37ms over 5 frame(s), 5 burst(s), session_calls=57330
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.01s
+[129.49] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.18ms over 5 frame(s), 5 burst(s), session_calls=59780
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.01s
+[134.50] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.19ms over 5 frame(s), 5 burst(s), session_calls=62230
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.01s
+[138.62] SPIKE 642.2ms  frame=17653  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[139.57] SPIKE 943.1ms  frame=17654  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[139.57] TICKS calls=1470 (NetworkSwitch=408 Server=1062) cost=0.72ms over 3 frame(s), 3 burst(s), session_calls=63700
+    burst cadence: 1.00s, 1.00s, 1.00s
+[141.53] ===== PHASE MARKER -> shop =====
+[145.04] SPIKE 770.5ms  frame=18453  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[145.04] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.26ms over 5 frame(s), 5 burst(s), session_calls=66150
+    burst cadence: 2.39s, 1.00s, 1.00s, 1.00s, 1.00s
+[145.07] session end

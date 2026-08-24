@@ -18,9 +18,13 @@ namespace DCProfiler;
 internal static class Ticks
 {
     internal static int CallsInterval;
+    internal static int CallsThisFrame;
     internal static double MsInterval;
     internal static int DistinctFramesInterval;
     internal static int BurstsInterval;
+
+    /// <summary>Clear the per-frame counter once Alloc has attributed the frame.</summary>
+    internal static void EndFrame() => CallsThisFrame = 0;
 
     private static long _callStart;
     private static int _lastFrame = -999;
@@ -52,6 +56,7 @@ internal static class Ticks
             var elapsed = (Stopwatch.GetTimestamp() - _callStart) * 1000.0 / Stopwatch.Frequency;
             MsInterval += elapsed;
             CallsInterval++;
+            CallsThisFrame++;
             _callsTotal++;
 
             KindCounts.TryGetValue(kind, out var kc);

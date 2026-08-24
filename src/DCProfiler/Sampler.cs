@@ -36,6 +36,7 @@ internal static class Sampler
     private static bool _headerWritten;
     private static double _lastHotkey;
     private static string _marker = "boot";
+    private static bool _censusPending = true;
 
     internal static double Now => Clock.Elapsed.TotalSeconds;
 
@@ -64,9 +65,13 @@ internal static class Sampler
         Evt($"[{Now:F2}] SCENE LOADED '{sceneName}' - counters reset");
         Churn.Reset();
         Ticks.Reset();
+        Ropes.Reset();
+        Alloc.Reset();
+        Heavy.Reset();
         _frameCount = 0;
         _lastFrameStamp = Now;
         _lastFlush = Now;
+        _censusPending = true;
     }
 
     internal static void Tick()
@@ -74,6 +79,20 @@ internal static class Sampler
         var now = Now;
         var dtMs = (now - _lastFrameStamp) * 1000.0;
         _lastFrameStamp = now;
+
+        // Attribute this frame's heap growth to whatever ran during it, then
+        // roll the per-frame rope counters into the interval totals.
+        Alloc.SampleFrame(Ropes.GenMeshFrame, Ticks.CallsThisFrame);
+        Ropes.EndFrame();
+        Ticks.EndFrame();
+
+        // Census once, a few seconds after load, so cables spawned during the
+        // load burst are all present. One-shot - never on a timer.
+        if (_censusPending && now - _lastFlush > 3.0)
+        {
+            _censusPending = false;
+            Ropes.Census();
+        }
 
         // Frame 1 after a load is a multi-second outlier; it would swamp the
         // percentiles and tells us nothing about steady-state stutter.
@@ -162,7 +181,9 @@ internal static class Sampler
         {
             Csv("t,marker,frames,fps,mean_ms,p50_ms,p95_ms,p99_ms,max_ms,spikes," +
                 "created,destroyed,net,tick_calls,tick_ms,tick_frames,tick_bursts," +
-                "mono_used_mb,mono_heap_mb,mono_delta_mb");
+                "mono_used_mb,mono_heap_mb,mono_delta_mb," +
+                "alloc_mb,alloc_mb_s,alloc_ropegen_mb,alloc_tick_mb,alloc_quiet_mb," +
+                "gc_events,gc_freed_mb,rope_update,ropemesh_update,gen_mesh,create_mesh");
             _headerWritten = true;
         }
 
@@ -174,7 +195,12 @@ internal static class Sampler
             (Churn.CreatedInterval - Churn.DestroyedInterval).ToString(),
             Ticks.CallsInterval.ToString(), F(Ticks.MsInterval),
             Ticks.DistinctFramesInterval.ToString(), Ticks.BurstsInterval.ToString(),
-            F(monoUsed / 1048576.0), F(monoHeap / 1048576.0), F(monoDeltaMb)
+            F(monoUsed / 1048576.0), F(monoHeap / 1048576.0), F(monoDeltaMb),
+            F(Alloc.MbTotal), F(Alloc.MbTotal / Math.Max(span, 0.001)),
+            F(Alloc.MbInRopeGenFrames), F(Alloc.MbInTickFrames), F(Alloc.MbInQuietFrames),
+            Alloc.GcEvents.ToString(), F(Alloc.MbFreedByGc),
+            Ropes.RopeUpdateInterval.ToString(), Ropes.MeshUpdateInterval.ToString(),
+            Ropes.GenMeshInterval.ToString(), Ropes.CreateMeshInterval.ToString()
         }));
 
         foreach (var s in SpikeLines) Evt(s);
@@ -182,17 +208,24 @@ internal static class Sampler
 
         Churn.FlushDetail();
         Ticks.FlushDetail();
+        Alloc.FlushDetail(span);
+        Ropes.FlushDetail(span, _frameCount);
+        Heavy.FlushDetail();
 
         // One compact line to the MelonLoader log so the run can be eyeballed live.
         Mod.Log.Msg($"[{_marker}] {fps:F0}fps p50={p50:F1} p99={p99:F1} max={max:F1}ms " +
                     $"spikes={_spikesThisInterval} | dev +{Churn.CreatedInterval}/-{Churn.DestroyedInterval} " +
-                    $"| ticks {Ticks.CallsInterval} in {Ticks.BurstsInterval} burst(s) {Ticks.MsInterval:F1}ms " +
-                    $"| heap {monoUsed / 1048576.0:F0}MB ({monoDeltaMb:+0.0;-0.0;0}MB)");
+                    $"| alloc {Alloc.MbTotal / Math.Max(span, 0.001):F2}MB/s " +
+                    $"(rope {Alloc.MbInRopeGenFrames:F1} tick {Alloc.MbInTickFrames:F1} quiet {Alloc.MbInQuietFrames:F1}) " +
+                    $"| genmesh {Ropes.GenMeshInterval} | heap {monoUsed / 1048576.0:F0}MB");
 
         _frameCount = 0;
         _spikesThisInterval = 0;
         Churn.EndInterval();
         Ticks.EndInterval();
+        Alloc.EndInterval();
+        Ropes.EndInterval();
+        Heavy.EndInterval();
     }
 
     private static string F(double d) => d.ToString("F2", CultureInfo.InvariantCulture);
