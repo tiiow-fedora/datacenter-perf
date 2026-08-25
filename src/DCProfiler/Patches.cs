@@ -101,6 +101,94 @@ internal static class Patch_CreateRopeMesh
     private static void Postfix() => Ropes.CreateMeshFrame++;
 }
 
+// --- cables: the leading candidate ------------------------------------------
+// Counters are cheap; the Heavy scopes carry the heap reads. CreateTubeMesh is
+// per-cable-per-redraw, so a heap read per call is affordable at the observed
+// rates but the counter is what proves the call volume.
+
+[HarmonyPatch(typeof(Il2Cpp.CablePositions), "RedrawCable")]
+internal static class Patch_RedrawCable
+{
+    private static void Prefix() { Cables.CountRedraw(); Heavy.Enter("CablePositions.RedrawCable"); }
+    private static void Postfix() => Heavy.Exit("CablePositions.RedrawCable");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.CablePositions), "CreateTubeMesh")]
+internal static class Patch_CreateTubeMesh
+{
+    private static void Prefix() { Cables.CountTube(); Heavy.Enter("CablePositions.CreateTubeMesh"); }
+    private static void Postfix() => Heavy.Exit("CablePositions.CreateTubeMesh");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.CablePositions), "GenerateFinalPath")]
+internal static class Patch_GenerateFinalPath
+{
+    private static void Prefix() { Cables.CountFinalPath(); Heavy.Enter("CablePositions.GenerateFinalPath"); }
+    private static void Postfix() => Heavy.Exit("CablePositions.GenerateFinalPath");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.CablePositions), "LoadCable")]
+internal static class Patch_LoadCable
+{
+    private static void Prefix() => Heavy.Enter("CablePositions.LoadCable");
+    private static void Postfix() => Heavy.Exit("CablePositions.LoadCable");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.CablePositions), "AssignNewPosition")]
+internal static class Patch_AssignNewPosition
+{
+    private static void Prefix() => Heavy.Enter("CablePositions.AssignNewPosition");
+    private static void Postfix() => Heavy.Exit("CablePositions.AssignNewPosition");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.CablePositions), "SetCableColor")]
+internal static class Patch_SetCableColor
+{
+    private static void Prefix() => Heavy.Enter("CablePositions.SetCableColor");
+    private static void Postfix() => Heavy.Exit("CablePositions.SetCableColor");
+}
+
+// --- broad per-frame sweep ---------------------------------------------------
+// If the allocation is NOT cables, it is some other MonoBehaviour running every
+// frame. These are the gameplay-relevant Update() methods; the rest of the 41 in
+// the assembly are TMPro examples and the on-screen-keyboard package, which
+// never run here. Heavy samples the heap rather than reading it every call.
+
+[HarmonyPatch(typeof(Il2Cpp.TimeController), "Update")]
+internal static class Patch_TimeControllerUpdate
+{
+    private static void Prefix() => Heavy.EnterSampled("TimeController.Update");
+    private static void Postfix() => Heavy.ExitSampled("TimeController.Update");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.Technician), "Update")]
+internal static class Patch_TechnicianUpdate
+{
+    private static void Prefix() => Heavy.EnterSampled("Technician.Update");
+    private static void Postfix() => Heavy.ExitSampled("Technician.Update");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.AICharacterControl), "Update")]
+internal static class Patch_AIUpdate
+{
+    private static void Prefix() => Heavy.EnterSampled("AICharacterControl.Update");
+    private static void Postfix() => Heavy.ExitSampled("AICharacterControl.Update");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.PositionIndicator), "Update")]
+internal static class Patch_PositionIndicatorUpdate
+{
+    private static void Prefix() => Heavy.EnterSampled("PositionIndicator.Update");
+    private static void Postfix() => Heavy.ExitSampled("PositionIndicator.Update");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.SteamManager), "Update")]
+internal static class Patch_SteamUpdate
+{
+    private static void Prefix() => Heavy.EnterSampled("SteamManager.Update");
+    private static void Postfix() => Heavy.ExitSampled("SteamManager.Update");
+}
+
 // --- the big freezes: shop and list UI ---------------------------------------
 
 [HarmonyPatch(typeof(Il2Cpp.ComputerShop), "RefreshRoomUI")]

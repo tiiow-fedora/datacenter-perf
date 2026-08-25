@@ -7,7 +7,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>DCProfiler</AssemblyName>
     <RootNamespace>DCProfiler</RootNamespace>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <!-- Override with:  dotnet build -p:GameDir="D:\path\to\Data Center" -->
     <GameDir Condition="'$(GameDir)'==''">C:\Program Files (x86)\Steam\steamapps\common\Data Center</GameDir>

@@ -1,6 +1,6 @@
 using MelonLoader;
 
-[assembly: MelonInfo(typeof(DCProfiler.Mod), "DCProfiler", "0.2.0", "tiiow-fedora")]
+[assembly: MelonInfo(typeof(DCProfiler.Mod), "DCProfiler", "0.3.0", "tiiow-fedora")]
 // Developer string comes from Data Center_Data/app.info and IS case sensitive -
 // "WASEKU" makes MelonLoader skip the mod as incompatible.
 [assembly: MelonGame("Waseku", "Data Center")]

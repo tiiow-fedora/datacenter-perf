@@ -66,6 +66,7 @@ internal static class Sampler
         Churn.Reset();
         Ticks.Reset();
         Ropes.Reset();
+        Cables.Reset();
         Alloc.Reset();
         Heavy.Reset();
         _frameCount = 0;
@@ -183,7 +184,8 @@ internal static class Sampler
                 "created,destroyed,net,tick_calls,tick_ms,tick_frames,tick_bursts," +
                 "mono_used_mb,mono_heap_mb,mono_delta_mb," +
                 "alloc_mb,alloc_mb_s,alloc_ropegen_mb,alloc_tick_mb,alloc_quiet_mb," +
-                "gc_events,gc_freed_mb,rope_update,ropemesh_update,gen_mesh,create_mesh");
+                "gc_events,gc_freed_mb,rope_update,ropemesh_update,gen_mesh,create_mesh," +
+                "cable_redraw,cable_tube,cable_finalpath");
             _headerWritten = true;
         }
 
@@ -200,7 +202,9 @@ internal static class Sampler
             F(Alloc.MbInRopeGenFrames), F(Alloc.MbInTickFrames), F(Alloc.MbInQuietFrames),
             Alloc.GcEvents.ToString(), F(Alloc.MbFreedByGc),
             Ropes.RopeUpdateInterval.ToString(), Ropes.MeshUpdateInterval.ToString(),
-            Ropes.GenMeshInterval.ToString(), Ropes.CreateMeshInterval.ToString()
+            Ropes.GenMeshInterval.ToString(), Ropes.CreateMeshInterval.ToString(),
+            Cables.RedrawInterval.ToString(), Cables.TubeMeshInterval.ToString(),
+            Cables.FinalPathInterval.ToString()
         }));
 
         foreach (var s in SpikeLines) Evt(s);
@@ -210,6 +214,7 @@ internal static class Sampler
         Ticks.FlushDetail();
         Alloc.FlushDetail(span);
         Ropes.FlushDetail(span, _frameCount);
+        Cables.FlushDetail(span);
         Heavy.FlushDetail();
 
         // One compact line to the MelonLoader log so the run can be eyeballed live.
@@ -217,7 +222,7 @@ internal static class Sampler
                     $"spikes={_spikesThisInterval} | dev +{Churn.CreatedInterval}/-{Churn.DestroyedInterval} " +
                     $"| alloc {Alloc.MbTotal / Math.Max(span, 0.001):F2}MB/s " +
                     $"(rope {Alloc.MbInRopeGenFrames:F1} tick {Alloc.MbInTickFrames:F1} quiet {Alloc.MbInQuietFrames:F1}) " +
-                    $"| genmesh {Ropes.GenMeshInterval} | heap {monoUsed / 1048576.0:F0}MB");
+                    $"| tube {Cables.TubeMeshInterval} redraw {Cables.RedrawInterval} | heap {monoUsed / 1048576.0:F0}MB");
 
         _frameCount = 0;
         _spikesThisInterval = 0;
@@ -225,6 +230,7 @@ internal static class Sampler
         Ticks.EndInterval();
         Alloc.EndInterval();
         Ropes.EndInterval();
+        Cables.EndInterval();
         Heavy.EndInterval();
     }
 
