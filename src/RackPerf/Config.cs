@@ -8,17 +8,27 @@ internal class Config
     public bool Enabled { get; set; } = true;
 
     /// <summary>
-    /// Multiply the game's stock route-evaluation cooldown by this. 1.0 = stock.
-    /// Ignored when EvaluationCooldownSeconds is set explicitly.
+    /// Minimum seconds between full network route evaluations.
+    ///
+    /// MEASURED: the game's stock value is 0 - there is no throttle at all, so
+    /// every cable edit triggers a complete traversal of every cable against
+    /// every device. Editing five cables in ten seconds means five full
+    /// re-routes. This is what a COALESCING window fixes: a burst of edits
+    /// collapses into one evaluation once you stop changing things.
+    ///
+    /// Deliberately small. This is not meant to make evaluation rare - it is
+    /// meant to stop it running N times for one logical change. The cost is at
+    /// most this many seconds before a newly connected cable carries packets.
+    /// Idle is unaffected: with a settled network, zero evaluations fire.
     /// </summary>
-    public float CooldownMultiplier { get; set; } = 3.0f;
+    public float EvaluationCooldownSeconds { get; set; } = 1.0f;
 
     /// <summary>
-    /// Absolute cooldown in seconds. 0 = use CooldownMultiplier instead.
-    /// Higher means less allocation but a longer delay before a newly connected
-    /// cable starts carrying packets.
+    /// Legacy multiplier on the stock cooldown. INERT in practice: stock is 0,
+    /// so any multiple of it is still 0. Kept only so an existing config file
+    /// does not fail to parse. Use EvaluationCooldownSeconds.
     /// </summary>
-    public float EvaluationCooldownSeconds { get; set; } = 0f;
+    public float CooldownMultiplier { get; set; } = 1.0f;
 
     /// <summary>
     /// Per-frame millisecond budget for the evaluation coroutine. 0 = leave the

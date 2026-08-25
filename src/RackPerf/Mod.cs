@@ -2,7 +2,7 @@ using MelonLoader;
 using MelonLoader.Utils;
 using UnityEngine.InputSystem;
 
-[assembly: MelonInfo(typeof(RackPerf.Mod), "RackPerf", "1.0.0", "tiiow-fedora")]
+[assembly: MelonInfo(typeof(RackPerf.Mod), "RackPerf", "1.0.1", "tiiow-fedora")]
 // Developer string comes from Data Center_Data/app.info and IS case sensitive -
 // "WASEKU" makes MelonLoader skip the mod as incompatible.
 [assembly: MelonGame("Waseku", "Data Center")]
@@ -22,8 +22,7 @@ public class Mod : MelonMod
         Log = LoggerInstance;
         Cfg = Config.LoadOrCreate(Path.Combine(MelonEnvironment.UserDataDirectory, "RackPerf"));
         Log.Msg(Cfg.Enabled
-            ? $"enabled - cooldown x{Cfg.CooldownMultiplier}" +
-              (Cfg.EvaluationCooldownSeconds > 0 ? $" (absolute {Cfg.EvaluationCooldownSeconds}s)" : "")
+            ? $"enabled - route evaluation coalescing window {Cfg.EvaluationCooldownSeconds}s"
             : "DISABLED by config - game left untouched");
         if (Cfg.EnableHotkey) Log.Msg("F9 toggles the throttle for A/B comparison");
     }

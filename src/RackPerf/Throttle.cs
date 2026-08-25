@@ -70,6 +70,9 @@ internal static class Throttle
             // was changed from what, and so Restore() can put them back.
             if (_originalCooldown < 0f) { _originalCooldown = current; _originalBudget = budget; }
 
+            // Absolute value is the only meaningful lever: stock cooldown reads
+            // 0.00s, so the multiplier path can only ever produce 0 (measured -
+            // v1.0.0 shipped with a x3 default and was a confirmed no-op).
             var target = Mod.Cfg.EvaluationCooldownSeconds > 0
                 ? Mod.Cfg.EvaluationCooldownSeconds
                 : _originalCooldown * Mod.Cfg.CooldownMultiplier;
@@ -77,6 +80,13 @@ internal static class Throttle
             // Never go below stock - this mod may only ever make evaluation less
             // frequent, never more.
             if (target < _originalCooldown) target = _originalCooldown;
+
+            if (target <= 0f)
+            {
+                Mod.Log.Warning("computed cooldown is 0 - nothing will change. " +
+                                "Set EvaluationCooldownSeconds in config.json.");
+                return;
+            }
 
             sys.SetEvaluationCooldown(target);
 
