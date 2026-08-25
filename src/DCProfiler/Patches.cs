@@ -148,6 +148,45 @@ internal static class Patch_SetCableColor
     private static void Postfix() => Heavy.Exit("CablePositions.SetCableColor");
 }
 
+// --- network route evaluation: the leading candidate -------------------------
+// WaypointInitializationSystem is a managed SystemBase, so unlike the Burst
+// ISystems it is reachable by Harmony. The coroutine state machines are patched
+// manually in Mod.cs because their generated names (_EvaluateAllRoutesCoroutine
+// _d__73) cannot be written as attribute targets.
+
+[HarmonyPatch(typeof(Il2Cpp.WaypointInitializationSystem), "EvaluateAllRoutes")]
+internal static class Patch_EvaluateAllRoutes
+{
+    private static void Prefix() => Routes.EvalBegin();
+    private static void Postfix() => Routes.EvalEnd();
+}
+
+[HarmonyPatch(typeof(Il2Cpp.WaypointInitializationSystem), "RequestRouteEvaluation")]
+internal static class Patch_RequestRouteEvaluation
+{
+    private static void Postfix() => Routes.CountRequest();
+}
+
+[HarmonyPatch(typeof(Il2Cpp.WaypointInitializationSystem), "OnUpdate")]
+internal static class Patch_WaypointOnUpdate
+{
+    private static void Postfix() => Routes.CountSystemUpdate();
+}
+
+[HarmonyPatch(typeof(Il2Cpp.WaypointInitializationSystem), "ActivateSpawnersForCable")]
+internal static class Patch_ActivateSpawners
+{
+    private static void Prefix() => Heavy.EnterSampled("Waypoint.ActivateSpawnersForCable");
+    private static void Postfix() => Heavy.ExitSampled("Waypoint.ActivateSpawnersForCable");
+}
+
+[HarmonyPatch(typeof(Il2Cpp.WaypointInitializationSystem), "CreateSpawner")]
+internal static class Patch_CreateSpawner
+{
+    private static void Prefix() => Heavy.EnterSampled("Waypoint.CreateSpawner");
+    private static void Postfix() => Heavy.ExitSampled("Waypoint.CreateSpawner");
+}
+
 // --- broad per-frame sweep ---------------------------------------------------
 // If the allocation is NOT cables, it is some other MonoBehaviour running every
 // frame. These are the gameplay-relevant Update() methods; the rest of the 41 in

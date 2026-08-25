@@ -18,7 +18,7 @@ internal static class Sampler
 {
     private const double FlushSeconds = 5.0;
     private const double SpikeMs = 50.0;   // a frame over this is logged individually
-    private const int MaxSpikeLines = 8;   // per flush interval, keeps the log readable
+    private const int MaxSpikeLines = 16;  // per flush interval, keeps the log readable
     private const int FrameBufCap = 8192;
 
     private static readonly Stopwatch Clock = Stopwatch.StartNew();
@@ -36,6 +36,7 @@ internal static class Sampler
     private static bool _headerWritten;
     private static double _lastHotkey;
     private static string _marker = "boot";
+    private static int _phase;
     private static bool _censusPending = true;
 
     internal static double Now => Clock.Elapsed.TotalSeconds;
@@ -52,7 +53,7 @@ internal static class Sampler
         Mod.Log.Msg($"csv    -> {_csvPath}");
         Mod.Log.Msg($"events -> {_evtPath}");
         Mod.Log.Msg($"flush every {FlushSeconds}s, spike threshold {SpikeMs}ms");
-        Mod.Log.Msg("F7 = mark a phase (stand still / walk / shop), F8 = dump churn detail now");
+        Mod.Log.Msg("F7 = advance phase marker, F8 = dump churn detail now");
 
         Evt($"# DCProfiler session {stamp}");
         Evt($"# spike threshold {SpikeMs}ms, flush {FlushSeconds}s");
@@ -67,6 +68,7 @@ internal static class Sampler
         Ticks.Reset();
         Ropes.Reset();
         Cables.Reset();
+        Routes.Reset();
         Alloc.Reset();
         Heavy.Reset();
         _frameCount = 0;
@@ -93,6 +95,7 @@ internal static class Sampler
         {
             _censusPending = false;
             Ropes.Census();
+            Routes.LogSettings();
         }
 
         // Frame 1 after a load is a multi-second outlier; it would swamp the
@@ -129,14 +132,11 @@ internal static class Sampler
         if (kb.f7Key.wasPressedThisFrame)
         {
             _lastHotkey = now;
-            _marker = _marker switch
-            {
-                "still" => "walk",
-                "walk" => "shop",
-                _ => "still"
-            };
-            Evt($"[{now:F2}] ===== PHASE MARKER -> {_marker} =====");
-            Mod.Log.Msg($"phase marker -> {_marker}");
+            _phase++;
+            _marker = "p" + _phase;
+            // Wall-clock too, so the log can be aligned against screen capture.
+            Evt($"[{now:F2}] ===== PHASE {_phase} ===== (wall clock {DateTime.Now:HH:mm:ss})");
+            Mod.Log.Msg($"===== PHASE {_phase} =====");
         }
         else if (kb.f8Key.wasPressedThisFrame)
         {
@@ -185,7 +185,8 @@ internal static class Sampler
                 "mono_used_mb,mono_heap_mb,mono_delta_mb," +
                 "alloc_mb,alloc_mb_s,alloc_ropegen_mb,alloc_tick_mb,alloc_quiet_mb," +
                 "gc_events,gc_freed_mb,rope_update,ropemesh_update,gen_mesh,create_mesh," +
-                "cable_redraw,cable_tube,cable_finalpath");
+                "cable_redraw,cable_tube,cable_finalpath," +
+                "route_request,route_eval,route_eval_ms,route_movenext,route_movenext_ms,route_movenext_mb");
             _headerWritten = true;
         }
 
@@ -204,7 +205,9 @@ internal static class Sampler
             Ropes.RopeUpdateInterval.ToString(), Ropes.MeshUpdateInterval.ToString(),
             Ropes.GenMeshInterval.ToString(), Ropes.CreateMeshInterval.ToString(),
             Cables.RedrawInterval.ToString(), Cables.TubeMeshInterval.ToString(),
-            Cables.FinalPathInterval.ToString()
+            Cables.FinalPathInterval.ToString(),
+            Routes.RequestCalls.ToString(), Routes.EvalCalls.ToString(), F(Routes.EvalMs),
+            Routes.MoveNextCalls.ToString(), F(Routes.MoveNextMs), F(Routes.MoveNextMb)
         }));
 
         foreach (var s in SpikeLines) Evt(s);
@@ -215,6 +218,7 @@ internal static class Sampler
         Alloc.FlushDetail(span);
         Ropes.FlushDetail(span, _frameCount);
         Cables.FlushDetail(span);
+        Routes.FlushDetail();
         Heavy.FlushDetail();
 
         // One compact line to the MelonLoader log so the run can be eyeballed live.
@@ -222,7 +226,7 @@ internal static class Sampler
                     $"spikes={_spikesThisInterval} | dev +{Churn.CreatedInterval}/-{Churn.DestroyedInterval} " +
                     $"| alloc {Alloc.MbTotal / Math.Max(span, 0.001):F2}MB/s " +
                     $"(rope {Alloc.MbInRopeGenFrames:F1} tick {Alloc.MbInTickFrames:F1} quiet {Alloc.MbInQuietFrames:F1}) " +
-                    $"| tube {Cables.TubeMeshInterval} redraw {Cables.RedrawInterval} | heap {monoUsed / 1048576.0:F0}MB");
+                    $"| route mn={Routes.MoveNextCalls} {Routes.MoveNextMb:F0}MB | heap {monoUsed / 1048576.0:F0}MB");
 
         _frameCount = 0;
         _spikesThisInterval = 0;
@@ -231,6 +235,7 @@ internal static class Sampler
         Alloc.EndInterval();
         Ropes.EndInterval();
         Cables.EndInterval();
+        Routes.EndInterval();
         Heavy.EndInterval();
     }
 
