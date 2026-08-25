@@ -1,6 +1,6 @@
 using MelonLoader;
 
-[assembly: MelonInfo(typeof(DCProfiler.Mod), "DCProfiler", "0.5.0", "tiiow-fedora")]
+[assembly: MelonInfo(typeof(DCProfiler.Mod), "DCProfiler", "0.6.0", "tiiow-fedora")]
 // Developer string comes from Data Center_Data/app.info and IS case sensitive -
 // "WASEKU" makes MelonLoader skip the mod as incompatible.
 [assembly: MelonGame("Waseku", "Data Center")]
@@ -68,5 +68,10 @@ public class Mod : MelonMod
 
     public override void OnUpdate() => Sampler.Tick();
 
-    public override void OnApplicationQuit() => Sampler.Shutdown();
+    public override void OnApplicationQuit()
+    {
+        // Never leave the player's settings altered by a diagnostic build.
+        Experiments.RestoreAll();
+        Sampler.Shutdown();
+    }
 }

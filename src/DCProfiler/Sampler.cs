@@ -53,7 +53,7 @@ internal static class Sampler
         Mod.Log.Msg($"csv    -> {_csvPath}");
         Mod.Log.Msg($"events -> {_evtPath}");
         Mod.Log.Msg($"flush every {FlushSeconds}s, spike threshold {SpikeMs}ms");
-        Mod.Log.Msg("F7 = advance phase marker, F8 = dump churn detail now");
+        Mod.Log.Msg("F7 phase, F8 churn dump | EXPERIMENTS: F10 half-res, F11 shadows off, F12 lodBias 0.3, F6 shadowDist 5, F5 reset");
 
         Evt($"# DCProfiler session {stamp}");
         Evt($"# spike threshold {SpikeMs}ms, flush {FlushSeconds}s");
@@ -119,6 +119,7 @@ internal static class Sampler
         }
 
         Hotkeys();
+        Experiments.Tick();
 
         if (now - _lastFlush >= FlushSeconds) Flush(now);
     }
@@ -196,7 +197,7 @@ internal static class Sampler
 
         Csv(string.Join(",", new[]
         {
-            F(now), _marker, _frameCount.ToString(), F(fps), F(mean), F(p50), F(p95), F(p99), F(max),
+            F(now), _phase > 0 ? $"p{_phase}.{Experiments.Marker}" : Experiments.Marker, _frameCount.ToString(), F(fps), F(mean), F(p50), F(p95), F(p99), F(max),
             _spikesThisInterval.ToString(),
             Churn.CreatedInterval.ToString(), Churn.DestroyedInterval.ToString(),
             (Churn.CreatedInterval - Churn.DestroyedInterval).ToString(),
@@ -228,7 +229,7 @@ internal static class Sampler
         Heavy.FlushDetail();
 
         // One compact line to the MelonLoader log so the run can be eyeballed live.
-        Mod.Log.Msg($"[{_marker}] {fps:F0}fps p50={p50:F1} p99={p99:F1} max={max:F1}ms " +
+        Mod.Log.Msg($"[{Experiments.Marker}] {fps:F0}fps p50={p50:F1} p99={p99:F1} max={max:F1}ms " +
                     $"spikes={_spikesThisInterval} | dev +{Churn.CreatedInterval}/-{Churn.DestroyedInterval} " +
                     $"| alloc {Alloc.MbTotal / Math.Max(span, 0.001):F2}MB/s " +
                     $"(rope {Alloc.MbInRopeGenFrames:F1} tick {Alloc.MbInTickFrames:F1} quiet {Alloc.MbInQuietFrames:F1}) " +
