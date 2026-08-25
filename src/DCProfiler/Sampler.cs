@@ -69,6 +69,7 @@ internal static class Sampler
         Ropes.Reset();
         Cables.Reset();
         Routes.Reset();
+        Render.Reset();
         Alloc.Reset();
         Heavy.Reset();
         _frameCount = 0;
@@ -86,6 +87,7 @@ internal static class Sampler
         // Attribute this frame's heap growth to whatever ran during it, then
         // roll the per-frame rope counters into the interval totals.
         Alloc.SampleFrame(Ropes.GenMeshFrame, Ticks.CallsThisFrame);
+        Render.SampleFrame();
         Ropes.EndFrame();
         Ticks.EndFrame();
 
@@ -96,6 +98,7 @@ internal static class Sampler
             _censusPending = false;
             Ropes.Census();
             Routes.LogSettings();
+            Render.DumpSettings();
         }
 
         // Frame 1 after a load is a multi-second outlier; it would swamp the
@@ -186,7 +189,8 @@ internal static class Sampler
                 "alloc_mb,alloc_mb_s,alloc_ropegen_mb,alloc_tick_mb,alloc_quiet_mb," +
                 "gc_events,gc_freed_mb,rope_update,ropemesh_update,gen_mesh,create_mesh," +
                 "cable_redraw,cable_tube,cable_finalpath," +
-                "route_request,route_eval,route_eval_ms,route_movenext,route_movenext_ms,route_movenext_mb");
+                "route_request,route_eval,route_eval_ms,route_movenext,route_movenext_ms,route_movenext_mb," +
+                "cpu_main_ms,cpu_render_ms,gpu_ms,present_wait_ms");
             _headerWritten = true;
         }
 
@@ -207,7 +211,8 @@ internal static class Sampler
             Cables.RedrawInterval.ToString(), Cables.TubeMeshInterval.ToString(),
             Cables.FinalPathInterval.ToString(),
             Routes.RequestCalls.ToString(), Routes.EvalCalls.ToString(), F(Routes.EvalMs),
-            Routes.MoveNextCalls.ToString(), F(Routes.MoveNextMs), F(Routes.MoveNextMb)
+            Routes.MoveNextCalls.ToString(), F(Routes.MoveNextMs), F(Routes.MoveNextMb),
+            F(Render.AvgCpuMain), F(Render.AvgCpuRender), F(Render.AvgGpu), F(Render.AvgPresent)
         }));
 
         foreach (var s in SpikeLines) Evt(s);
@@ -219,6 +224,7 @@ internal static class Sampler
         Ropes.FlushDetail(span, _frameCount);
         Cables.FlushDetail(span);
         Routes.FlushDetail();
+        Render.FlushDetail();
         Heavy.FlushDetail();
 
         // One compact line to the MelonLoader log so the run can be eyeballed live.
@@ -226,7 +232,7 @@ internal static class Sampler
                     $"spikes={_spikesThisInterval} | dev +{Churn.CreatedInterval}/-{Churn.DestroyedInterval} " +
                     $"| alloc {Alloc.MbTotal / Math.Max(span, 0.001):F2}MB/s " +
                     $"(rope {Alloc.MbInRopeGenFrames:F1} tick {Alloc.MbInTickFrames:F1} quiet {Alloc.MbInQuietFrames:F1}) " +
-                    $"| route mn={Routes.MoveNextCalls} {Routes.MoveNextMb:F0}MB | heap {monoUsed / 1048576.0:F0}MB");
+                    $"| cpu {Render.AvgCpuMain:F1} gpu {Render.AvgGpu:F1}ms | route {Routes.MoveNextMb:F0}MB | heap {monoUsed / 1048576.0:F0}MB");
 
         _frameCount = 0;
         _spikesThisInterval = 0;
@@ -236,6 +242,7 @@ internal static class Sampler
         Ropes.EndInterval();
         Cables.EndInterval();
         Routes.EndInterval();
+        Render.EndInterval();
         Heavy.EndInterval();
     }
 
