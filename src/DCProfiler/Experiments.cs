@@ -25,7 +25,7 @@ namespace DCProfiler;
 
 internal static class Experiments
 {
-    private static bool _halfRes, _noShadows, _lowLod, _shortShadow;
+    private static bool _halfRes, _noShadows, _lowLod, _shortShadow, _noCables;
     private static bool _captured;
     private static int _origW, _origH;
     private static FullScreenMode _origMode;
@@ -38,12 +38,13 @@ internal static class Experiments
     {
         get
         {
-            if (!_halfRes && !_noShadows && !_lowLod && !_shortShadow) return "base";
+            if (!_halfRes && !_noShadows && !_lowLod && !_shortShadow && !_noCables) return "base";
             var s = "";
             if (_halfRes) s += "res50+";
             if (_noShadows) s += "noshadow+";
             if (_lowLod) s += "lod03+";
             if (_shortShadow) s += "shdist5+";
+            if (_noCables) s += "nocable+";
             return s.TrimEnd('+');
         }
     }
@@ -72,6 +73,7 @@ internal static class Experiments
         else if (kb.f11Key.wasPressedThisFrame) { Capture(); _noShadows = !_noShadows; ApplyShadows(); Announce("shadows OFF", _noShadows); _lastKey = now; }
         else if (kb.f12Key.wasPressedThisFrame) { Capture(); _lowLod = !_lowLod; ApplyLod(); Announce("lodBias 0.3", _lowLod); _lastKey = now; }
         else if (kb.f6Key.wasPressedThisFrame) { Capture(); _shortShadow = !_shortShadow; ApplyShadowDist(); Announce("shadowDistance 5", _shortShadow); _lastKey = now; }
+        else if (kb.f9Key.wasPressedThisFrame) { Capture(); _noCables = !_noCables; ApplyCables(); Announce($"cable renderers OFF ({Render.CableRenderers.Count})", _noCables); _lastKey = now; }
         else if (kb.f5Key.wasPressedThisFrame) { RestoreAll(); _lastKey = now; }
     }
 
@@ -109,12 +111,34 @@ internal static class Experiments
         catch (Exception e) { Mod.Log.Warning($"shadowDistance toggle failed: {e.Message}"); }
     }
 
+    // The decisive test for the fixed ~8ms: resolution, shadows and lodBias all
+    // failed to move it, and per-object culling is the one cost none of those
+    // three touch. Switching off 24834 cable renderers removes them from culling
+    // entirely - if the frame time drops, object count is confirmed as the cost.
+    private static void ApplyCables()
+    {
+        try
+        {
+            var list = Render.CableRenderers;
+            var want = !_noCables;
+            var n = 0;
+            foreach (var r in list)
+            {
+                if (r == null) continue;
+                r.enabled = want;
+                n++;
+            }
+            Sampler.Evt($"[{Sampler.Now:F2}]    toggled {n} cable renderers -> enabled={want}");
+        }
+        catch (Exception e) { Mod.Log.Warning($"cable toggle failed: {e.Message}"); }
+    }
+
     /// <summary>Put everything back. Also called on quit so the game is never left altered.</summary>
     internal static void RestoreAll()
     {
         if (!_captured) return;
-        _halfRes = _noShadows = _lowLod = _shortShadow = false;
-        ApplyRes(); ApplyShadows(); ApplyLod(); ApplyShadowDist();
+        _halfRes = _noShadows = _lowLod = _shortShadow = _noCables = false;
+        ApplyRes(); ApplyShadows(); ApplyLod(); ApplyShadowDist(); ApplyCables();
         Sampler.Evt($"[{Sampler.Now:F2}] ===== EXPERIMENTS RESET to baseline =====");
         Mod.Log.Msg("experiments reset to baseline");
     }

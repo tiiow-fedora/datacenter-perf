@@ -23,6 +23,13 @@ internal static class Render
     private static bool _checked;
     private static bool _dumped;
 
+    /// <summary>
+    /// Cached during the census purely so the F9 experiment can switch the
+    /// 24k+ cable renderers off and prove whether raw object count is the
+    /// fixed per-frame cost. Populated once per scene load, never polled.
+    /// </summary>
+    internal static readonly List<Renderer> CableRenderers = new();
+
     private static double _cpuMain, _cpuRender, _gpu, _present;
     private static int _samples;
     private static double _gpuMax, _cpuMax;
@@ -123,6 +130,22 @@ internal static class Render
                         $"screen={Screen.width}x{Screen.height} fullscreen={Screen.fullScreenMode}");
             var rp = QualitySettings.renderPipeline;
             Sampler.Evt($"    renderPipeline={(rp != null ? rp.name : "(none / graphics default)")}");
+
+            // Unity 6 GPU-driven path. With ~40k renderers this is exactly the
+            // feature meant to move per-object culling off the CPU, so whether
+            // it is running at all matters more than any quality setting.
+            try
+            {
+                var supported = UnityEngine.Rendering.GPUResidentDrawer.IsProjectSupported();
+                var inst = UnityEngine.Rendering.GPUResidentDrawer.instance;
+                var occl = UnityEngine.Rendering.GPUResidentDrawer.IsInstanceOcclusionCullingEnabled();
+                Sampler.Evt($"    GPUResidentDrawer: supported={supported} active={(inst != null)} occlusionCulling={occl}");
+                Mod.Log.Msg($"GPUResidentDrawer supported={supported} active={(inst != null)} occlusion={occl}");
+            }
+            catch (Exception e)
+            {
+                Sampler.Evt($"    GPUResidentDrawer query failed: {e.Message}");
+            }
         }
         catch (Exception e)
         {
@@ -136,6 +159,7 @@ internal static class Render
         {
             var arr = UnityEngine.Object.FindObjectsByType(
                 Il2CppInterop.Runtime.Il2CppType.Of<Renderer>(), FindObjectsSortMode.None);
+            CableRenderers.Clear();
             int total = 0, casters = 0, enabled = 0;
             var byKind = new Dictionary<string, int>();
             var castersByKind = new Dictionary<string, int>();
@@ -150,6 +174,7 @@ internal static class Render
                 if (casts) casters++;
 
                 var kind = Classify(r.gameObject.name);
+                if (kind == "Cable") CableRenderers.Add(r);
                 byKind.TryGetValue(kind, out var a); byKind[kind] = a + 1;
                 if (casts) { castersByKind.TryGetValue(kind, out var b); castersByKind[kind] = b + 1; }
             }

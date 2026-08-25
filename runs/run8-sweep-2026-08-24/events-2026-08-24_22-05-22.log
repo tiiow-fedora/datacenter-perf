@@ -1,0 +1,342 @@
+﻿# DCProfiler session 2026-08-24_22-05-22
+# spike threshold 50ms, flush 5s
+[0.74] FrameTimingManager enabled=False
+[1.02] SCENE LOADED 'MainMenu' - counters reset
+[4.33] SCENE LOADED 'BaseScene' - counters reset
+[7.50] ROPE CENSUS: 1 Rope, 0 RopeMesh in scene
+[7.50] ROUTE SETTINGS: evaluation ms budget = 20
+[7.51] ===== GRAPHICS SETTINGS =====
+    quality level 5 'ULTRA' of 6
+    lodBias=1 maximumLODLevel=0 lodCrossFade=True
+    shadows=All distance=15 cascades=1 res=Low mask=DistanceShadowmask
+    vSync=0 AA=0 aniso=ForceEnable mipLimit=0
+    realtimeReflectionProbes=False pixelLights=0 maxQueuedFrames=2
+    targetFrameRate=-1 screen=1920x1080 fullscreen=Windowed
+    renderPipeline=HDRP Quality ULTRA
+    renderers total=37871 enabled=22929 shadowCasters=5814
+      Cable             23204 renderers,     54 cast shadows
+      other             10076 renderers,   4915 cast shadows
+      Rack               3937 renderers,    204 cast shadows
+      Server              428 renderers,    428 cast shadows
+      NetworkGear         200 renderers,    187 cast shadows
+      PatchPanel           26 renderers,     26 cast shadows
+    lights=126 enabled=126 casting shadows=125
+      Pyramid/Baked                120
+      Spot/Baked                   4
+      Point/Baked                  1
+      Rectangle/Realtime           1
+[0.73] SPIKE 730.0ms  frame=1  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[3.79] SPIKE 1463.0ms  frame=226  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[4.42] SPIKE 53.3ms  frame=230  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[6.49] SPIKE 1663.7ms  frame=275  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[6.66] SPIKE 50.3ms  frame=291  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.09] SPIKE 141.0ms  frame=322  created_since_flush=152 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.46] SPIKE 315.9ms  frame=326  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.84] SPIKE 379.6ms  frame=327  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.90] SPIKE 65.8ms  frame=328  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[8.06] SPIKE 159.7ms  frame=329  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[8.51] SPIKE 346.1ms  frame=336  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[8.66] SPIKE 131.5ms  frame=338  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[8.86] SPIKE 159.4ms  frame=340  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[9.07] SPIKE 57.4ms  frame=346  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=980
+[9.33] SPIKE 81.0ms  frame=357  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=980
+[9.35] CHURN +588 -0 (session +588 -0, tracked-live 588)
+    path x122: Objects/UsableObjects/Switch16CU(Clone)
+    path x120: Objects/UsableObjects/Server.Yellow2(Clone)
+    path x108: Objects/UsableObjects/Server.Blue2(Clone)
+    path x90: Objects/UsableObjects/Server.Purple2(Clone)
+    +NetworkSwitch  id=-126810 scene=Y camDist=12.5 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-127150 scene=Y camDist=15.8 path=Objects/UsableObjects/Switch4xQSXP16xSFP(Clone)
+    +NetworkSwitch  id=-127554 scene=Y camDist=13.7 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-127894 scene=Y camDist=16.5 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-128230 scene=Y camDist=15.3 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-128570 scene=Y camDist=10.4 path=Objects/UsableObjects/Switch32xQSFP(Clone)
+[9.35] TICKS calls=980 (NetworkSwitch=272 Server=708) cost=1.13ms over 2 frame(s), 2 burst(s), session_calls=980
+    burst cadence: 0.99s
+[9.35] ALLOC 416.78MB in 5.0s = 83.31MB/s | gc 4x freed 277.8MB | probe_cost 2.06ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=2 14.61MB (7478.0 KB/frame)
+    quiet   frames n=124 402.18MB (3321.2 KB/frame)
+[9.35] ROPES census=1/0 Rope.Update=130 (0/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[9.35] CABLES RedrawCable=1630 CreateTubeMesh=1630 GenerateFinalPath=0 (325.8 tube/s) session: redraw=1630 tube=1630
+[9.36] ROUTES request=1210 eval=1 (10.9ms) coroutine_movenext=18 (244.2ms, 58.8MB) sysupdate=130 | session eval=1 movenext=18
+    heavy CablePositions.LoadCable: n=1630 126.3ms 33.16MB
+    heavy CablePositions.RedrawCable: n=1630 75.9ms 30.62MB
+    heavy CablePositions.CreateTubeMesh: n=1630 47.2ms 30.09MB
+    heavy Waypoint.CreateSpawner: n=3234 20.2ms 0.22MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 5.7ms 0.28MB
+    heavy SteamManager.Update: n=130 3.7ms 0.00MB
+    heavy ComputerShop.RefreshTemplateShopItems: n=2 0.8ms 0.09MB
+    heavy Waypoint.ActivateSpawnersForCable: n=931 0.6ms 0.03MB
+    heavy AICharacterControl.Update: n=30 0.2ms 0.00MB
+    heavy ServiceRequests.RebuildUI: n=3 0.0ms 0.00MB
+    heavy Technician.Update: n=30 0.0ms 0.00MB
+    heavy ComputerShop.RefreshRoomUI: n=2 0.0ms 0.00MB
+[12.08] SPIKE 104.6ms  frame=640  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[12.73] SPIKE 103.1ms  frame=689  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[14.34] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=3.05ms over 5 frame(s), 5 burst(s), session_calls=3430
+    burst cadence: 0.98s, 1.00s, 1.00s, 1.01s, 1.01s
+[14.34] ALLOC 33.16MB in 5.0s = 6.63MB/s | gc 0x freed 0.0MB | probe_cost 0.57ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 6.52MB (1336.0 KB/frame)
+    quiet   frames n=482 26.63MB (56.6 KB/frame)
+[14.34] ROPES census=1/0 Rope.Update=488 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=488 12.6ms 0.00MB
+    heavy AICharacterControl.Update: n=2928 10.8ms 0.00MB
+    heavy Technician.Update: n=2928 0.5ms 0.00MB
+[19.34] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.23ms over 5 frame(s), 5 burst(s), session_calls=5880
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.00s
+[19.34] ALLOC 25.49MB in 5.0s = 5.09MB/s | gc 1x freed 12.2MB | probe_cost 0.65ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.20MB (860.0 KB/frame)
+    quiet   frames n=537 21.29MB (40.6 KB/frame)
+[19.34] ROPES census=1/0 Rope.Update=544 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=544 14.2ms 0.00MB
+    heavy AICharacterControl.Update: n=3264 12.1ms 0.00MB
+    heavy Technician.Update: n=3264 0.6ms 0.00MB
+[24.35] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.45ms over 5 frame(s), 5 burst(s), session_calls=8330
+    burst cadence: 1.00s, 1.00s, 1.01s, 1.01s, 1.01s
+[24.35] ALLOC 5.29MB in 5.0s = 1.06MB/s | gc 0x freed 0.0MB | probe_cost 0.67ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.59MB (939.2 KB/frame)
+    quiet   frames n=486 0.70MB (1.5 KB/frame)
+[24.35] ROPES census=1/0 Rope.Update=492 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=492 13.3ms 0.00MB
+    heavy AICharacterControl.Update: n=2952 11.4ms 0.00MB
+    heavy Technician.Update: n=2952 0.5ms 0.00MB
+[29.35] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.38ms over 5 frame(s), 5 burst(s), session_calls=10780
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.01s, 1.01s
+[29.35] ALLOC 5.63MB in 5.0s = 1.13MB/s | gc 0x freed 0.0MB | probe_cost 0.59ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.92MB (1008.0 KB/frame)
+    quiet   frames n=484 0.71MB (1.5 KB/frame)
+[29.35] ROPES census=1/0 Rope.Update=490 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=490 12.7ms 0.00MB
+    heavy AICharacterControl.Update: n=2940 10.9ms 0.00MB
+    heavy Technician.Update: n=2940 0.5ms 0.00MB
+[34.35] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.36ms over 5 frame(s), 5 burst(s), session_calls=13230
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.00s
+[34.35] ALLOC 5.64MB in 5.0s = 1.13MB/s | gc 0x freed 0.0MB | probe_cost 0.62ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.93MB (1009.6 KB/frame)
+    quiet   frames n=484 0.71MB (1.5 KB/frame)
+[34.35] ROPES census=1/0 Rope.Update=490 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=490 13.1ms 0.00MB
+    heavy AICharacterControl.Update: n=2940 11.0ms 0.00MB
+    heavy Technician.Update: n=2940 0.5ms 0.00MB
+[39.35] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.44ms over 5 frame(s), 5 burst(s), session_calls=15680
+    burst cadence: 1.01s, 1.00s, 1.00s, 1.00s, 1.00s
+[39.35] ALLOC 6.71MB in 5.0s = 1.34MB/s | gc 0x freed 0.0MB | probe_cost 0.62ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.69MB (1164.8 KB/frame)
+    quiet   frames n=482 1.02MB (2.2 KB/frame)
+[39.35] ROPES census=1/0 Rope.Update=488 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=488 13.2ms 0.00MB
+    heavy AICharacterControl.Update: n=2928 11.3ms 0.00MB
+    heavy Technician.Update: n=2928 0.5ms 0.03MB
+[41.13] EXPERIMENT baseline captured: 1920x1080 Windowed, shadows=All lodBias=1 shadowDistance=15
+[41.13] ===== EXPERIMENT half resolution ON -> marker 'res50' =====
+[41.19] SPIKE 61.6ms  frame=3523  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[44.36] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.61ms over 5 frame(s), 5 burst(s), session_calls=18130
+    burst cadence: 1.00s, 1.00s, 1.01s, 1.00s, 1.01s
+[44.36] ALLOC 6.96MB in 5.0s = 1.39MB/s | gc 0x freed 0.0MB | probe_cost 0.75ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.80MB (1188.0 KB/frame)
+    quiet   frames n=529 1.16MB (2.2 KB/frame)
+[44.36] ROPES census=1/0 Rope.Update=535 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=535 15.5ms 0.03MB
+    heavy AICharacterControl.Update: n=3210 14.0ms 0.19MB
+    heavy Technician.Update: n=3210 0.7ms 0.25MB
+[49.37] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.80ms over 5 frame(s), 5 burst(s), session_calls=20580
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.00s, 1.00s
+[49.37] ALLOC 7.05MB in 5.0s = 1.41MB/s | gc 0x freed 0.0MB | probe_cost 0.80ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.82MB (1192.8 KB/frame)
+    quiet   frames n=573 1.23MB (2.2 KB/frame)
+[49.37] ROPES census=1/0 Rope.Update=579 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=579 17.7ms 0.00MB
+    heavy AICharacterControl.Update: n=3474 15.4ms 0.00MB
+    heavy Technician.Update: n=3474 0.8ms 0.03MB
+[54.38] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.76ms over 5 frame(s), 5 burst(s), session_calls=23030
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.00s, 1.01s
+[54.38] ALLOC 7.06MB in 5.0s = 1.41MB/s | gc 0x freed 0.0MB | probe_cost 0.86ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.81MB (1190.4 KB/frame)
+    quiet   frames n=574 1.25MB (2.2 KB/frame)
+[54.38] ROPES census=1/0 Rope.Update=580 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=580 17.8ms 0.00MB
+    heavy AICharacterControl.Update: n=3480 15.7ms 0.09MB
+    heavy Technician.Update: n=3480 0.8ms 0.09MB
+[59.38] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.83ms over 5 frame(s), 5 burst(s), session_calls=25480
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.01s, 1.01s
+[59.38] ALLOC 4.68MB in 5.0s = 0.93MB/s | gc 1x freed 45.5MB | probe_cost 0.83ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.12MB (843.2 KB/frame)
+    quiet   frames n=571 0.56MB (1.0 KB/frame)
+[59.38] ROPES census=1/0 Rope.Update=578 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=578 18.2ms 0.00MB
+    heavy AICharacterControl.Update: n=3468 15.6ms 0.03MB
+    heavy Technician.Update: n=3468 0.8ms 0.03MB
+[64.38] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.98ms over 5 frame(s), 5 burst(s), session_calls=27930
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.01s, 1.01s
+[64.38] ALLOC 5.44MB in 5.0s = 1.09MB/s | gc 0x freed 0.0MB | probe_cost 0.83ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.68MB (958.4 KB/frame)
+    quiet   frames n=573 0.76MB (1.4 KB/frame)
+[64.38] ROPES census=1/0 Rope.Update=579 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=579 18.0ms 0.00MB
+    heavy AICharacterControl.Update: n=3474 14.8ms 0.00MB
+    heavy Technician.Update: n=3474 0.7ms 0.00MB
+[65.43] ===== EXPERIMENT half resolution OFF -> marker 'base' =====
+[67.96] ===== EXPERIMENT shadows OFF ON -> marker 'noshadow' =====
+[65.48] SPIKE 50.7ms  frame=6322  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[69.39] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.39ms over 5 frame(s), 5 burst(s), session_calls=30380
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.01s, 1.01s
+[69.39] ALLOC 5.65MB in 5.0s = 1.13MB/s | gc 0x freed 0.0MB | probe_cost 0.64ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.93MB (1008.8 KB/frame)
+    quiet   frames n=486 0.72MB (1.5 KB/frame)
+[69.39] ROPES census=1/0 Rope.Update=492 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=492 13.8ms 0.00MB
+    heavy AICharacterControl.Update: n=2952 11.7ms 0.00MB
+    heavy Technician.Update: n=2952 0.6ms 0.00MB
+[74.39] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.25ms over 5 frame(s), 5 burst(s), session_calls=32830
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.00s
+[74.39] ALLOC 5.64MB in 5.0s = 1.13MB/s | gc 0x freed 0.0MB | probe_cost 0.59ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.94MB (1012.0 KB/frame)
+    quiet   frames n=483 0.70MB (1.5 KB/frame)
+[74.39] ROPES census=1/0 Rope.Update=489 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=489 13.2ms 0.00MB
+    heavy AICharacterControl.Update: n=2934 10.9ms 0.00MB
+    heavy Technician.Update: n=2934 0.5ms 0.00MB
+[79.40] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.32ms over 5 frame(s), 5 burst(s), session_calls=35280
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.00s
+[79.40] ALLOC 5.66MB in 5.0s = 1.13MB/s | gc 0x freed 0.0MB | probe_cost 0.60ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.94MB (1012.0 KB/frame)
+    quiet   frames n=483 0.72MB (1.5 KB/frame)
+[79.40] ROPES census=1/0 Rope.Update=489 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=489 13.0ms 0.00MB
+    heavy AICharacterControl.Update: n=2934 11.0ms 0.00MB
+    heavy Technician.Update: n=2934 0.5ms 0.00MB
+[84.41] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.36ms over 5 frame(s), 5 burst(s), session_calls=37730
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.00s
+[84.41] ALLOC 6.86MB in 5.0s = 1.37MB/s | gc 0x freed 0.0MB | probe_cost 0.62ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.80MB (1187.2 KB/frame)
+    quiet   frames n=483 1.06MB (2.2 KB/frame)
+[84.41] ROPES census=1/0 Rope.Update=489 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=489 13.5ms 0.00MB
+    heavy AICharacterControl.Update: n=2934 11.0ms 0.19MB
+    heavy Technician.Update: n=2934 0.5ms 0.03MB
+[89.42] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.35ms over 5 frame(s), 5 burst(s), session_calls=40180
+    burst cadence: 1.00s, 1.00s, 1.01s, 1.01s, 1.01s
+[89.42] ALLOC 6.87MB in 5.0s = 1.37MB/s | gc 0x freed 0.0MB | probe_cost 0.60ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.79MB (1186.4 KB/frame)
+    quiet   frames n=482 1.08MB (2.3 KB/frame)
+[89.42] ROPES census=1/0 Rope.Update=488 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=488 13.4ms 0.00MB
+    heavy AICharacterControl.Update: n=2928 10.9ms 0.16MB
+    heavy Technician.Update: n=2928 0.5ms 0.09MB
+[89.93] ===== EXPERIMENT shadows OFF OFF -> marker 'base' =====
+[91.12] ===== EXPERIMENT lodBias 0.3 ON -> marker 'lod03' =====
+[94.42] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.40ms over 5 frame(s), 5 burst(s), session_calls=42630
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.00s, 1.01s
+[94.42] ALLOC 6.83MB in 5.0s = 1.37MB/s | gc 0x freed 0.0MB | probe_cost 0.60ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.79MB (1186.4 KB/frame)
+    quiet   frames n=481 1.04MB (2.2 KB/frame)
+[94.42] ROPES census=1/0 Rope.Update=487 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=487 13.4ms 0.00MB
+    heavy AICharacterControl.Update: n=2922 10.9ms 0.03MB
+    heavy Technician.Update: n=2922 0.6ms 0.09MB
+[99.42] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.43ms over 5 frame(s), 5 burst(s), session_calls=45080
+    burst cadence: 1.01s, 1.00s, 1.00s, 1.01s, 1.00s
+[99.42] ALLOC 4.52MB in 5.0s = 0.90MB/s | gc 1x freed 45.8MB | probe_cost 0.60ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.07MB (834.4 KB/frame)
+    quiet   frames n=479 0.45MB (1.0 KB/frame)
+[99.42] ROPES census=1/0 Rope.Update=486 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=486 13.3ms 0.00MB
+    heavy AICharacterControl.Update: n=2916 10.9ms 0.03MB
+    heavy Technician.Update: n=2916 0.5ms 0.03MB
+[104.42] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.40ms over 5 frame(s), 5 burst(s), session_calls=47530
+    burst cadence: 1.01s, 1.00s, 1.00s, 1.01s, 1.01s
+[104.42] ALLOC 5.30MB in 5.0s = 1.06MB/s | gc 0x freed 0.0MB | probe_cost 0.60ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.68MB (959.2 KB/frame)
+    quiet   frames n=482 0.62MB (1.3 KB/frame)
+[104.42] ROPES census=1/0 Rope.Update=488 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=488 13.3ms 0.00MB
+    heavy AICharacterControl.Update: n=2928 10.9ms 0.00MB
+    heavy Technician.Update: n=2928 0.5ms 0.00MB
+[109.43] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.31ms over 5 frame(s), 5 burst(s), session_calls=49980
+    burst cadence: 1.00s, 1.01s, 1.01s, 1.01s, 1.01s
+[109.43] ALLOC 5.62MB in 5.0s = 1.12MB/s | gc 0x freed 0.0MB | probe_cost 0.59ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.92MB (1008.0 KB/frame)
+    quiet   frames n=482 0.70MB (1.5 KB/frame)
+[109.43] ROPES census=1/0 Rope.Update=488 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=488 13.1ms 0.00MB
+    heavy AICharacterControl.Update: n=2928 10.7ms 0.00MB
+    heavy Technician.Update: n=2928 0.5ms 0.00MB
+[114.44] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.27ms over 5 frame(s), 5 burst(s), session_calls=52430
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.00s, 1.01s
+[114.44] ALLOC 5.62MB in 5.0s = 1.12MB/s | gc 0x freed 0.0MB | probe_cost 0.60ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.93MB (1009.6 KB/frame)
+    quiet   frames n=482 0.70MB (1.5 KB/frame)
+[114.44] ROPES census=1/0 Rope.Update=488 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=488 13.0ms 0.00MB
+    heavy AICharacterControl.Update: n=2928 10.8ms 0.00MB
+    heavy Technician.Update: n=2928 0.6ms 0.00MB
+[119.44] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.32ms over 5 frame(s), 5 burst(s), session_calls=54880
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.01s, 1.01s
+[119.44] ALLOC 5.62MB in 5.0s = 1.12MB/s | gc 0x freed 0.0MB | probe_cost 0.60ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.93MB (1009.6 KB/frame)
+    quiet   frames n=481 0.70MB (1.5 KB/frame)
+[119.44] ROPES census=1/0 Rope.Update=487 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=487 13.5ms 0.00MB
+    heavy AICharacterControl.Update: n=2922 11.0ms 0.00MB
+    heavy Technician.Update: n=2922 0.6ms 0.00MB
+[120.98] ===== EXPERIMENT lodBias 0.3 OFF -> marker 'base' =====
+[122.81] ===== EXPERIMENTS RESET to baseline =====
+[124.45] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.41ms over 5 frame(s), 5 burst(s), session_calls=57330
+    burst cadence: 1.01s, 1.01s, 1.00s, 1.01s, 1.01s
+[124.45] ALLOC 5.80MB in 5.0s = 1.16MB/s | gc 0x freed 0.0MB | probe_cost 0.58ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.14MB (1052.0 KB/frame)
+    quiet   frames n=469 0.66MB (1.4 KB/frame)
+[124.45] ROPES census=1/0 Rope.Update=475 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=475 12.5ms 0.00MB
+    heavy AICharacterControl.Update: n=2850 10.6ms 0.00MB
+    heavy Technician.Update: n=2850 0.5ms 0.00MB
+[127.20] ===== EXPERIMENTS RESET to baseline =====
+[127.20] session end

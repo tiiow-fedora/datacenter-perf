@@ -53,7 +53,7 @@ internal static class Sampler
         Mod.Log.Msg($"csv    -> {_csvPath}");
         Mod.Log.Msg($"events -> {_evtPath}");
         Mod.Log.Msg($"flush every {FlushSeconds}s, spike threshold {SpikeMs}ms");
-        Mod.Log.Msg("F7 phase, F8 churn dump | EXPERIMENTS: F10 half-res, F11 shadows off, F12 lodBias 0.3, F6 shadowDist 5, F5 reset");
+        Mod.Log.Msg("F7 phase, F8 churn dump | EXPERIMENTS: F10 half-res, F11 shadows off, F12 lodBias 0.3, F6 shadowDist 5, F9 cables off, F5 reset");
 
         Evt($"# DCProfiler session {stamp}");
         Evt($"# spike threshold {SpikeMs}ms, flush {FlushSeconds}s");
