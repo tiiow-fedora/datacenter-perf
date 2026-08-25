@@ -1,0 +1,925 @@
+﻿# DCProfiler session 2026-08-24_21-50-36
+# spike threshold 50ms, flush 5s
+[1.01] SCENE LOADED 'MainMenu' - counters reset
+[4.70] ROPE CENSUS: 1 Rope, 0 RopeMesh in scene
+[4.70] ROUTE SETTINGS: evaluation ms budget = 20
+[5.20] SCENE LOADED 'BaseScene' - counters reset
+[8.33] ROPE CENSUS: 1 Rope, 0 RopeMesh in scene
+[8.33] ROUTE SETTINGS: evaluation ms budget = 20
+[0.73] SPIKE 724.0ms  frame=1  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[4.67] SPIKE 1414.8ms  frame=275  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[5.31] SPIKE 77.0ms  frame=279  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.31] SPIKE 1614.6ms  frame=322  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.48] SPIKE 51.8ms  frame=339  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[7.90] SPIKE 141.3ms  frame=369  created_since_flush=152 destroyed_since_flush=0 tickcalls_since_flush=0
+[8.29] SPIKE 332.6ms  frame=373  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=0
+[8.53] SPIKE 240.8ms  frame=374  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=0
+[8.60] SPIKE 67.4ms  frame=375  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[8.75] SPIKE 154.9ms  frame=376  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[9.25] SPIKE 64.7ms  frame=404  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=490
+[10.05] SPIKE 98.0ms  frame=489  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=980
+[10.11] SPIKE 59.3ms  frame=490  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=980
+[10.22] SPIKE 86.3ms  frame=492  created_since_flush=588 destroyed_since_flush=0 tickcalls_since_flush=980
+[10.24] CHURN +588 -0 (session +588 -0, tracked-live 588)
+    path x122: Objects/UsableObjects/Switch16CU(Clone)
+    path x120: Objects/UsableObjects/Server.Yellow2(Clone)
+    path x108: Objects/UsableObjects/Server.Blue2(Clone)
+    path x90: Objects/UsableObjects/Server.Purple2(Clone)
+    +NetworkSwitch  id=-126810 scene=Y camDist=14.5 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-127150 scene=Y camDist=13.7 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-127490 scene=Y camDist=15.3 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-127830 scene=Y camDist=11.0 path=Objects/UsableObjects/Switch32xQSFP(Clone)
+    +NetworkSwitch  id=-128426 scene=Y camDist=12.2 path=Objects/UsableObjects/Switch16CU(Clone)
+    +NetworkSwitch  id=-128766 scene=Y camDist=13.3 path=Objects/UsableObjects/Switch16CU(Clone)
+[10.25] TICKS calls=980 (NetworkSwitch=272 Server=708) cost=2.71ms over 2 frame(s), 2 burst(s), session_calls=980
+    burst cadence: 0.95s
+[10.25] ALLOC 410.83MB in 5.0s = 81.80MB/s | gc 3x freed 262.8MB | probe_cost 2.40ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=2 15.99MB (8188.0 KB/frame)
+    quiet   frames n=211 394.84MB (1916.2 KB/frame)
+[10.25] ROPES census=1/0 Rope.Update=216 (0/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[10.25] CABLES RedrawCable=1630 CreateTubeMesh=1630 GenerateFinalPath=0 (324.6 tube/s) session: redraw=1630 tube=1630
+[10.25] ROUTES request=1210 eval=1 (9.7ms) coroutine_movenext=29 (233.6ms, 54.8MB) sysupdate=216 | session eval=1 movenext=29
+    heavy CablePositions.LoadCable: n=1630 135.2ms 32.88MB
+    heavy CablePositions.RedrawCable: n=1630 81.7ms 30.42MB
+    heavy CablePositions.CreateTubeMesh: n=1630 51.0ms 30.01MB
+    heavy Waypoint.CreateSpawner: n=3234 21.6ms 0.19MB
+    heavy SteamManager.Update: n=216 5.5ms 0.06MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 5.5ms 0.00MB
+    heavy ComputerShop.RefreshTemplateShopItems: n=2 0.9ms 0.09MB
+    heavy Waypoint.ActivateSpawnersForCable: n=931 0.7ms 0.00MB
+    heavy AICharacterControl.Update: n=12 0.1ms 0.22MB
+    heavy ServiceRequests.RebuildUI: n=3 0.0ms 0.00MB
+    heavy Technician.Update: n=12 0.0ms 0.00MB
+    heavy ComputerShop.RefreshRoomUI: n=2 0.0ms 0.00MB
+[10.35] SPIKE 122.6ms  frame=493  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[10.54] SPIKE 190.2ms  frame=494  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[10.81] SPIKE 256.0ms  frame=496  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[11.05] SPIKE 197.3ms  frame=498  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[12.57] SPIKE 119.6ms  frame=628  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[15.22] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.42ms over 5 frame(s), 5 burst(s), session_calls=3430
+    burst cadence: 1.03s, 1.00s, 1.02s, 1.00s, 1.00s
+[15.22] ALLOC 11.27MB in 5.0s = 2.25MB/s | gc 1x freed 12.3MB | probe_cost 0.56ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.11MB (1046.4 KB/frame)
+    quiet   frames n=409 6.16MB (15.4 KB/frame)
+[15.23] ROPES census=1/0 Rope.Update=416 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=416 11.5ms 0.00MB
+    heavy AICharacterControl.Update: n=2496 10.2ms 0.00MB
+    heavy Technician.Update: n=2496 0.5ms 0.00MB
+[20.23] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.36ms over 5 frame(s), 5 burst(s), session_calls=5880
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.00s, 1.01s
+[20.23] ALLOC 6.18MB in 5.0s = 1.23MB/s | gc 0x freed 0.0MB | probe_cost 0.67ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.15MB (1055.2 KB/frame)
+    quiet   frames n=564 1.03MB (1.9 KB/frame)
+[20.23] ROPES census=1/0 Rope.Update=570 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=570 14.6ms 0.03MB
+    heavy AICharacterControl.Update: n=3420 13.1ms 0.00MB
+    heavy Technician.Update: n=3420 0.7ms 0.03MB
+[20.36] ===== PHASE 1 ===== (wall clock 21:50:57)
+[22.75] SPIKE 134.1ms  frame=1757  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[23.02] SPIKE 59.3ms  frame=1767  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[24.58] SPIKE 61.2ms  frame=1929  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[24.73] SPIKE 104.2ms  frame=1935  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[25.23] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=2.25ms over 5 frame(s), 5 burst(s), session_calls=8330
+    burst cadence: 1.00s, 1.01s, 1.01s, 1.01s, 1.01s
+[25.23] ALLOC 159.90MB in 5.0s = 31.96MB/s | gc 3x freed 113.2MB | probe_cost 0.59ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 29.48MB (6037.6 KB/frame)
+    quiet   frames n=479 130.42MB (278.8 KB/frame)
+[25.23] ROPES census=1/0 Rope.Update=488 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[25.24] CABLES RedrawCable=3 CreateTubeMesh=1 GenerateFinalPath=1 (0.2 tube/s) session: redraw=1633 tube=1631
+[25.24] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=29 (414.1ms, 124.5MB) sysupdate=488 | session eval=1 movenext=58
+    heavy SteamManager.Update: n=488 12.3ms 0.09MB
+    heavy AICharacterControl.Update: n=2928 10.8ms 0.22MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 9.7ms 0.00MB
+    heavy Waypoint.ActivateSpawnersForCable: n=1862 1.1ms 0.03MB
+    heavy CablePositions.AssignNewPosition: n=3 0.7ms 0.01MB
+    heavy Technician.Update: n=2928 0.6ms 1.16MB
+    heavy CablePositions.RedrawCable: n=3 0.1ms 0.01MB
+    heavy Waypoint.CreateSpawner: n=2 0.1ms 0.00MB
+    heavy CablePositions.GenerateFinalPath: n=1 0.1ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=1 0.0ms 0.01MB
+[25.77] SPIKE 131.6ms  frame=2012  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[25.99] SPIKE 82.1ms  frame=2019  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[26.70] SPIKE 61.5ms  frame=2085  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[29.52] SPIKE 51.4ms  frame=2357  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[30.24] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.41ms over 5 frame(s), 5 burst(s), session_calls=10780
+    burst cadence: 1.01s, 1.04s, 0.96s, 1.01s, 1.00s
+[30.24] ALLOC 244.20MB in 5.0s = 48.81MB/s | gc 4x freed 184.2MB | probe_cost 0.86ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=4 7.48MB (1916.0 KB/frame)
+    quiet   frames n=459 236.72MB (528.1 KB/frame)
+[30.24] ROPES census=1/0 Rope.Update=468 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[30.24] CABLES RedrawCable=3 CreateTubeMesh=2 GenerateFinalPath=2 (0.4 tube/s) session: redraw=1636 tube=1633
+[30.24] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=68 (612.0ms, 190.6MB) sysupdate=468 | session eval=1 movenext=126
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.0ms 0.00MB
+    heavy SteamManager.Update: n=468 12.3ms 0.16MB
+    heavy AICharacterControl.Update: n=2808 10.2ms 0.41MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.8ms 0.06MB
+    heavy CablePositions.AssignNewPosition: n=3 0.6ms 0.01MB
+    heavy Technician.Update: n=2808 0.5ms 0.34MB
+    heavy CablePositions.RedrawCable: n=3 0.2ms 0.01MB
+    heavy Waypoint.CreateSpawner: n=4 0.1ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=2 0.1ms 0.01MB
+    heavy CablePositions.GenerateFinalPath: n=2 0.0ms 0.00MB
+[30.64] SPIKE 58.5ms  frame=2476  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[30.79] SPIKE 138.9ms  frame=2478  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[33.72] SPIKE 55.7ms  frame=2714  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[35.28] SPIKE 57.7ms  frame=2863  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[35.28] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.81ms over 5 frame(s), 5 burst(s), session_calls=13230
+    burst cadence: 1.01s, 1.00s, 1.00s, 1.05s, 0.96s
+[35.28] ALLOC 333.48MB in 5.0s = 66.16MB/s | gc 6x freed 378.4MB | probe_cost 1.31ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=4 19.11MB (4893.0 KB/frame)
+    quiet   frames n=418 314.37MB (770.1 KB/frame)
+[35.28] ROPES census=1/0 Rope.Update=429 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[35.28] CABLES RedrawCable=6 CreateTubeMesh=3 GenerateFinalPath=3 (0.6 tube/s) session: redraw=1642 tube=1636
+[35.28] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=92 (786.2ms, 269.8MB) sysupdate=429 | session eval=1 movenext=218
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.9ms 1.28MB
+    heavy SteamManager.Update: n=429 11.1ms 0.38MB
+    heavy AICharacterControl.Update: n=2574 9.8ms 0.62MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.8ms 0.03MB
+    heavy CablePositions.AssignNewPosition: n=6 1.0ms 0.01MB
+    heavy Technician.Update: n=2574 0.5ms 0.25MB
+    heavy CablePositions.RedrawCable: n=6 0.3ms 0.01MB
+    heavy Waypoint.CreateSpawner: n=6 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=3 0.1ms 0.01MB
+    heavy CablePositions.GenerateFinalPath: n=3 0.0ms 0.00MB
+[36.79] SPIKE 52.6ms  frame=3005  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[38.97] SPIKE 50.7ms  frame=3200  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[40.27] SPIKE 51.9ms  frame=3325  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[40.30] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.24ms over 5 frame(s), 5 burst(s), session_calls=15680
+    burst cadence: 1.01s, 1.04s, 1.01s, 1.00s, 0.99s
+[40.31] ALLOC 356.73MB in 5.0s = 70.96MB/s | gc 5x freed 292.3MB | probe_cost 1.05ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 35.43MB (7256.8 KB/frame)
+    quiet   frames n=452 321.29MB (727.9 KB/frame)
+[40.31] ROPES census=1/0 Rope.Update=463 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[40.31] CABLES RedrawCable=8 CreateTubeMesh=4 GenerateFinalPath=4 (0.8 tube/s) session: redraw=1650 tube=1640
+[40.31] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=113 (839.5ms, 273.6MB) sysupdate=463 | session eval=1 movenext=331
+    heavy Waypoint.UpdateAllUI.MoveNext: n=5 26.3ms 0.00MB
+    heavy SteamManager.Update: n=463 12.1ms 0.22MB
+    heavy AICharacterControl.Update: n=2778 10.2ms 0.97MB
+    heavy Waypoint.ActivateSpawnersForCable: n=4655 3.1ms 0.25MB
+    heavy CablePositions.AssignNewPosition: n=8 1.2ms 0.02MB
+    heavy Technician.Update: n=2778 0.6ms 0.47MB
+    heavy CablePositions.RedrawCable: n=8 0.4ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=8 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=4 0.1ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=4 0.0ms 0.00MB
+[42.27] SPIKE 53.9ms  frame=3498  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[45.31] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.28ms over 5 frame(s), 5 burst(s), session_calls=18130
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.01s, 1.04s
+[45.31] ALLOC 338.53MB in 5.0s = 67.59MB/s | gc 6x freed 426.3MB | probe_cost 0.90ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 16.33MB (3344.8 KB/frame)
+    quiet   frames n=435 322.20MB (758.5 KB/frame)
+[45.31] ROPES census=1/0 Rope.Update=447 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[45.31] CABLES RedrawCable=9 CreateTubeMesh=4 GenerateFinalPath=4 (0.8 tube/s) session: redraw=1659 tube=1644
+[45.31] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=110 (861.4ms, 270.5MB) sysupdate=447 | session eval=1 movenext=441
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 19.3ms 1.19MB
+    heavy SteamManager.Update: n=447 11.8ms 0.19MB
+    heavy AICharacterControl.Update: n=2682 9.8ms 0.75MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.4ms 0.19MB
+    heavy CablePositions.AssignNewPosition: n=9 1.2ms 0.02MB
+    heavy Technician.Update: n=2682 0.5ms 0.53MB
+    heavy CablePositions.RedrawCable: n=9 0.4ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=8 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=4 0.1ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=4 0.0ms 0.00MB
+[47.22] SPIKE 51.2ms  frame=3936  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[48.43] SPIKE 58.8ms  frame=4042  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[50.32] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.86ms over 5 frame(s), 5 burst(s), session_calls=20580
+    burst cadence: 0.99s, 1.00s, 1.00s, 1.01s, 1.01s
+[50.32] ALLOC 354.23MB in 5.0s = 70.74MB/s | gc 5x freed 298.5MB | probe_cost 1.59ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 6.74MB (1380.0 KB/frame)
+    quiet   frames n=423 347.50MB (841.2 KB/frame)
+[50.32] ROPES census=1/0 Rope.Update=434 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[50.32] CABLES RedrawCable=8 CreateTubeMesh=4 GenerateFinalPath=4 (0.8 tube/s) session: redraw=1667 tube=1648
+[50.32] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=105 (802.0ms, 271.4MB) sysupdate=434 | session eval=1 movenext=546
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 19.2ms 0.00MB
+    heavy SteamManager.Update: n=434 11.6ms 0.69MB
+    heavy AICharacterControl.Update: n=2604 9.8ms 1.28MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.4ms 0.00MB
+    heavy CablePositions.AssignNewPosition: n=8 1.3ms 0.02MB
+    heavy Technician.Update: n=2604 0.5ms 1.00MB
+    heavy CablePositions.RedrawCable: n=8 0.4ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=8 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=4 0.2ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=4 0.0ms 0.00MB
+[51.04] SPIKE 62.2ms  frame=4264  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[54.07] SPIKE 64.0ms  frame=4543  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[55.32] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.35ms over 5 frame(s), 5 burst(s), session_calls=23030
+    burst cadence: 1.03s, 0.98s, 1.00s, 1.01s, 1.04s
+[55.32] ALLOC 337.34MB in 5.0s = 67.42MB/s | gc 5x freed 371.9MB | probe_cost 1.28ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 26.47MB (5421.6 KB/frame)
+    quiet   frames n=432 310.87MB (736.9 KB/frame)
+[55.33] ROPES census=1/0 Rope.Update=443 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[55.33] CABLES RedrawCable=8 CreateTubeMesh=4 GenerateFinalPath=4 (0.8 tube/s) session: redraw=1675 tube=1652
+[55.33] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=108 (850.3ms, 262.4MB) sysupdate=443 | session eval=1 movenext=654
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 19.9ms 1.25MB
+    heavy SteamManager.Update: n=443 12.0ms 0.38MB
+    heavy AICharacterControl.Update: n=2658 9.9ms 0.78MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.6ms 0.22MB
+    heavy CablePositions.AssignNewPosition: n=8 1.4ms 0.02MB
+    heavy Technician.Update: n=2658 0.5ms 0.31MB
+    heavy CablePositions.RedrawCable: n=8 0.4ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=8 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=4 0.1ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=4 0.0ms 0.00MB
+[58.42] SPIKE 72.8ms  frame=4930  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[59.61] SPIKE 68.3ms  frame=5030  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[60.33] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.20ms over 5 frame(s), 5 burst(s), session_calls=25480
+    burst cadence: 0.98s, 1.00s, 1.00s, 1.00s, 1.01s
+[60.33] ALLOC 350.64MB in 5.0s = 70.07MB/s | gc 5x freed 403.8MB | probe_cost 0.96ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.01MB (821.6 KB/frame)
+    quiet   frames n=438 346.63MB (810.4 KB/frame)
+[60.33] ROPES census=1/0 Rope.Update=449 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[60.33] CABLES RedrawCable=7 CreateTubeMesh=4 GenerateFinalPath=4 (0.8 tube/s) session: redraw=1682 tube=1656
+[60.33] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=106 (836.8ms, 271.4MB) sysupdate=449 | session eval=1 movenext=760
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 19.5ms 0.00MB
+    heavy SteamManager.Update: n=449 11.7ms 0.25MB
+    heavy AICharacterControl.Update: n=2694 9.9ms 1.44MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.4ms 0.09MB
+    heavy CablePositions.AssignNewPosition: n=7 1.2ms 0.02MB
+    heavy Technician.Update: n=2694 0.5ms 0.56MB
+    heavy CablePositions.RedrawCable: n=7 0.3ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=8 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=4 0.1ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=4 0.0ms 0.00MB
+[60.48] SPIKE 60.2ms  frame=5110  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[62.75] SPIKE 57.9ms  frame=5342  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[63.15] SPIKE 57.0ms  frame=5366  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[64.48] SPIKE 63.7ms  frame=5507  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[65.34] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.18ms over 5 frame(s), 5 burst(s), session_calls=27930
+    burst cadence: 1.04s, 0.99s, 1.00s, 1.00s, 1.03s
+[65.34] ALLOC 247.59MB in 5.0s = 49.45MB/s | gc 4x freed 190.2MB | probe_cost 0.84ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.94MB (1011.2 KB/frame)
+    quiet   frames n=468 242.65MB (530.9 KB/frame)
+[65.34] ROPES census=1/0 Rope.Update=478 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[65.34] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=76 (623.6ms, 198.2MB) sysupdate=478 | session eval=1 movenext=836
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 15.5ms 0.00MB
+    heavy SteamManager.Update: n=478 12.5ms 0.19MB
+    heavy AICharacterControl.Update: n=2868 10.7ms 0.34MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.9ms 0.00MB
+    heavy Technician.Update: n=2868 0.6ms 0.16MB
+[66.18] SPIKE 56.8ms  frame=5665  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[67.70] SPIKE 58.4ms  frame=5801  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[68.11] SPIKE 53.4ms  frame=5826  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[69.55] SPIKE 62.7ms  frame=5963  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[69.98] SPIKE 79.5ms  frame=5986  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[70.35] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.19ms over 5 frame(s), 5 burst(s), session_calls=30380
+    burst cadence: 1.01s, 1.00s, 1.04s, 0.99s, 1.05s
+[70.35] ALLOC 258.49MB in 5.0s = 51.58MB/s | gc 4x freed 228.9MB | probe_cost 1.69ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 14.21MB (2910.4 KB/frame)
+    quiet   frames n=430 244.28MB (581.7 KB/frame)
+[70.35] ROPES census=1/0 Rope.Update=440 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[70.35] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=76 (611.8ms, 193.3MB) sysupdate=440 | session eval=1 movenext=912
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 13.8ms 0.00MB
+    heavy SteamManager.Update: n=440 11.1ms 0.25MB
+    heavy AICharacterControl.Update: n=2640 9.7ms 0.72MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.8ms 0.09MB
+    heavy Technician.Update: n=2640 0.5ms 0.75MB
+[71.22] SPIKE 58.8ms  frame=6103  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[71.63] SPIKE 68.2ms  frame=6127  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[72.79] SPIKE 58.2ms  frame=6250  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[74.53] SPIKE 60.2ms  frame=6411  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[75.36] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.26ms over 5 frame(s), 5 burst(s), session_calls=32830
+    burst cadence: 0.99s, 1.00s, 1.03s, 0.98s, 1.00s
+[75.36] ALLOC 258.72MB in 5.0s = 51.65MB/s | gc 3x freed 267.6MB | probe_cost 0.81ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 14.29MB (2927.2 KB/frame)
+    quiet   frames n=449 244.43MB (557.4 KB/frame)
+[75.36] ROPES census=1/0 Rope.Update=458 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[75.36] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=76 (651.5ms, 205.2MB) sysupdate=458 | session eval=1 movenext=988
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 15.8ms 1.19MB
+    heavy SteamManager.Update: n=458 11.5ms 0.44MB
+    heavy AICharacterControl.Update: n=2748 10.3ms 0.41MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 2.1ms 0.09MB
+    heavy Technician.Update: n=2748 0.5ms 0.53MB
+[76.19] SPIKE 63.1ms  frame=6560  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[77.77] SPIKE 59.6ms  frame=6691  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[78.18] SPIKE 52.1ms  frame=6714  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[79.37] SPIKE 63.5ms  frame=6821  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[79.78] SPIKE 51.2ms  frame=6844  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[80.36] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.31ms over 5 frame(s), 5 burst(s), session_calls=35280
+    burst cadence: 1.00s, 1.01s, 1.05s, 0.98s, 1.00s
+[80.36] ALLOC 267.46MB in 5.0s = 53.47MB/s | gc 4x freed 226.5MB | probe_cost 0.87ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=4 4.21MB (1077.0 KB/frame)
+    quiet   frames n=414 263.25MB (651.1 KB/frame)
+[80.36] ROPES census=1/0 Rope.Update=423 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[80.36] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=73 (619.3ms, 204.2MB) sysupdate=423 | session eval=1 movenext=1061
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.2ms 0.00MB
+    heavy SteamManager.Update: n=423 11.2ms 0.09MB
+    heavy AICharacterControl.Update: n=2538 9.8ms 0.34MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.7ms 0.03MB
+    heavy Technician.Update: n=2538 0.6ms 0.22MB
+[81.22] SPIKE 58.9ms  frame=6986  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[82.78] SPIKE 61.7ms  frame=7112  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[84.60] SPIKE 64.3ms  frame=7276  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[84.99] SPIKE 69.8ms  frame=7298  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[85.36] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.25ms over 5 frame(s), 5 burst(s), session_calls=37730
+    burst cadence: 1.00s, 1.00s, 1.03s, 0.98s, 1.01s
+[85.36] ALLOC 279.41MB in 5.0s = 55.81MB/s | gc 4x freed 408.5MB | probe_cost 1.04ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 16.22MB (3322.4 KB/frame)
+    quiet   frames n=422 263.19MB (638.6 KB/frame)
+[85.37] ROPES census=1/0 Rope.Update=432 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[85.37] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=71 (557.3ms, 216.5MB) sysupdate=432 | session eval=1 movenext=1132
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.7ms 0.00MB
+    heavy SteamManager.Update: n=432 11.8ms 0.34MB
+    heavy AICharacterControl.Update: n=2592 10.2ms 0.66MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.8ms 0.09MB
+    heavy Technician.Update: n=2592 0.7ms 0.47MB
+[85.98] SPIKE 59.2ms  frame=7391  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[86.13] SPIKE 57.7ms  frame=7401  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[87.75] SPIKE 57.3ms  frame=7543  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[88.17] SPIKE 52.5ms  frame=7567  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[89.51] SPIKE 59.3ms  frame=7700  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[90.38] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.50ms over 5 frame(s), 5 burst(s), session_calls=40180
+    burst cadence: 1.01s, 1.00s, 1.02s, 0.98s, 1.00s
+[90.38] ALLOC 237.00MB in 5.0s = 47.25MB/s | gc 4x freed 168.1MB | probe_cost 1.33ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 18.78MB (3846.4 KB/frame)
+    quiet   frames n=428 218.22MB (522.1 KB/frame)
+[90.38] ROPES census=1/0 Rope.Update=438 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[90.38] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=70 (586.7ms, 186.5MB) sysupdate=438 | session eval=1 movenext=1202
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 13.8ms 1.28MB
+    heavy SteamManager.Update: n=438 11.1ms 0.09MB
+    heavy AICharacterControl.Update: n=2628 10.0ms 0.41MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.7ms 0.00MB
+    heavy Technician.Update: n=2628 0.7ms 0.44MB
+[91.07] SPIKE 59.6ms  frame=7830  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[91.23] SPIKE 142.8ms  frame=7833  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[91.50] SPIKE 62.5ms  frame=7842  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[92.82] SPIKE 59.3ms  frame=7980  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[94.45] SPIKE 59.8ms  frame=8128  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[94.87] SPIKE 56.1ms  frame=8152  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[95.39] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.71ms over 5 frame(s), 5 burst(s), session_calls=42630
+    burst cadence: 1.01s, 1.01s, 1.04s, 0.98s, 1.00s
+[95.39] ALLOC 260.74MB in 5.0s = 52.09MB/s | gc 4x freed 220.2MB | probe_cost 0.86ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 25.27MB (5176.0 KB/frame)
+    quiet   frames n=428 235.46MB (563.4 KB/frame)
+[95.39] ROPES census=1/0 Rope.Update=438 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[95.39] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=64 (627.2ms, 198.5MB) sysupdate=438 | session eval=1 movenext=1266
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 15.0ms 0.00MB
+    heavy SteamManager.Update: n=438 11.5ms 0.06MB
+    heavy AICharacterControl.Update: n=2628 9.9ms 0.34MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.9ms 0.16MB
+    heavy Technician.Update: n=2628 0.7ms 0.22MB
+[96.42] SPIKE 57.5ms  frame=8325  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[96.84] SPIKE 56.9ms  frame=8351  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[97.97] SPIKE 59.6ms  frame=8475  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[98.45] SPIKE 57.0ms  frame=8502  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[100.39] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.25ms over 5 frame(s), 5 burst(s), session_calls=45080
+    burst cadence: 1.00s, 1.01s, 1.04s, 0.98s, 1.00s
+[100.39] ALLOC 183.51MB in 5.0s = 36.69MB/s | gc 2x freed 253.5MB | probe_cost 0.75ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 9.73MB (1992.0 KB/frame)
+    quiet   frames n=513 173.79MB (346.9 KB/frame)
+[100.39] ROPES census=1/0 Rope.Update=521 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[100.39] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=55 (474.5ms, 135.6MB) sysupdate=521 | session eval=1 movenext=1321
+    heavy SteamManager.Update: n=521 13.2ms 0.31MB
+    heavy AICharacterControl.Update: n=3126 11.4ms 0.47MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 9.7ms 0.00MB
+    heavy Waypoint.ActivateSpawnersForCable: n=1862 1.2ms 0.06MB
+    heavy Technician.Update: n=3126 0.7ms 0.38MB
+[100.42] ===== PHASE 2 ===== (wall clock 21:52:17)
+[105.39] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.25ms over 5 frame(s), 5 burst(s), session_calls=47530
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.02s, 1.00s
+[105.39] ALLOC 165.24MB in 5.0s = 33.01MB/s | gc 4x freed 183.9MB | probe_cost 1.03ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.29MB (1082.4 KB/frame)
+    quiet   frames n=517 159.96MB (316.8 KB/frame)
+[105.39] ROPES census=1/0 Rope.Update=527 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[105.39] CABLES RedrawCable=5 CreateTubeMesh=2 GenerateFinalPath=2 (0.4 tube/s) session: redraw=1687 tube=1658
+[105.39] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=53 (406.6ms, 132.4MB) sysupdate=527 | session eval=1 movenext=1374
+    heavy SteamManager.Update: n=527 13.3ms 0.09MB
+    heavy AICharacterControl.Update: n=3162 11.5ms 0.25MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 9.9ms 1.22MB
+    heavy Waypoint.ActivateSpawnersForCable: n=1862 1.3ms 0.03MB
+    heavy Technician.Update: n=3162 0.7ms 0.22MB
+    heavy CablePositions.AssignNewPosition: n=5 0.7ms 0.01MB
+    heavy CablePositions.RedrawCable: n=5 0.2ms 0.01MB
+    heavy Waypoint.CreateSpawner: n=4 0.1ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=2 0.1ms 0.01MB
+    heavy CablePositions.GenerateFinalPath: n=2 0.0ms 0.00MB
+[108.27] SPIKE 52.6ms  frame=9489  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[109.04] SPIKE 55.2ms  frame=9544  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[109.86] SPIKE 56.5ms  frame=9604  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[110.40] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.33ms over 5 frame(s), 5 burst(s), session_calls=49980
+    burst cadence: 1.01s, 1.00s, 1.06s, 0.97s, 1.00s
+[110.40] ALLOC 434.45MB in 5.0s = 86.78MB/s | gc 6x freed 341.7MB | probe_cost 1.33ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 14.76MB (3023.2 KB/frame)
+    quiet   frames n=389 419.69MB (1104.8 KB/frame)
+[110.40] ROPES census=1/0 Rope.Update=401 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[110.40] CABLES RedrawCable=11 CreateTubeMesh=6 GenerateFinalPath=6 (1.2 tube/s) session: redraw=1698 tube=1664
+[110.40] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=130 (1020.8ms, 332.1MB) sysupdate=401 | session eval=1 movenext=1504
+    heavy Waypoint.UpdateAllUI.MoveNext: n=6 26.2ms 0.00MB
+    heavy SteamManager.Update: n=401 11.1ms 0.28MB
+    heavy AICharacterControl.Update: n=2406 9.1ms 1.09MB
+    heavy Waypoint.ActivateSpawnersForCable: n=4655 3.1ms 0.09MB
+    heavy CablePositions.AssignNewPosition: n=11 2.1ms 0.03MB
+    heavy CablePositions.RedrawCable: n=11 0.6ms 0.02MB
+    heavy Technician.Update: n=2406 0.6ms 0.66MB
+    heavy Waypoint.CreateSpawner: n=12 0.3ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=6 0.2ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=6 0.1ms 0.00MB
+[110.87] SPIKE 76.2ms  frame=9679  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[112.66] SPIKE 55.8ms  frame=9824  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[113.37] SPIKE 134.3ms  frame=9885  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[114.36] SPIKE 120.9ms  frame=9954  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[114.62] SPIKE 51.1ms  frame=9963  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[115.40] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=2.05ms over 5 frame(s), 5 burst(s), session_calls=52430
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.00s, 1.00s
+[115.40] ALLOC 423.45MB in 5.0s = 84.65MB/s | gc 6x freed 428.0MB | probe_cost 1.47ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 38.43MB (7869.6 KB/frame)
+    quiet   frames n=372 385.03MB (1059.9 KB/frame)
+[115.40] ROPES census=1/0 Rope.Update=384 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[115.40] CABLES RedrawCable=10 CreateTubeMesh=5 GenerateFinalPath=5 (1.0 tube/s) session: redraw=1708 tube=1669
+[115.40] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=112 (1077.8ms, 330.9MB) sysupdate=384 | session eval=1 movenext=1616
+    heavy Waypoint.UpdateAllUI.MoveNext: n=5 23.1ms 1.16MB
+    heavy SteamManager.Update: n=384 10.3ms 0.59MB
+    heavy AICharacterControl.Update: n=2304 8.7ms 1.19MB
+    heavy Waypoint.ActivateSpawnersForCable: n=4655 2.9ms 0.12MB
+    heavy CablePositions.AssignNewPosition: n=10 1.8ms 0.02MB
+    heavy Technician.Update: n=2304 0.6ms 0.53MB
+    heavy CablePositions.RedrawCable: n=10 0.5ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=10 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=5 0.2ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=5 0.0ms 0.00MB
+[116.81] SPIKE 56.3ms  frame=10141  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[117.76] SPIKE 65.2ms  frame=10210  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[120.41] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.20ms over 5 frame(s), 5 burst(s), session_calls=54880
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.01s, 1.00s
+[120.41] ALLOC 424.64MB in 5.0s = 84.86MB/s | gc 6x freed 454.4MB | probe_cost 1.01ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 3.89MB (796.0 KB/frame)
+    quiet   frames n=384 420.75MB (1122.0 KB/frame)
+[120.41] ROPES census=1/0 Rope.Update=396 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[120.41] CABLES RedrawCable=9 CreateTubeMesh=4 GenerateFinalPath=4 (0.8 tube/s) session: redraw=1717 tube=1673
+[120.41] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=123 (1019.2ms, 344.0MB) sysupdate=396 | session eval=1 movenext=1739
+    heavy Waypoint.UpdateAllUI.MoveNext: n=5 27.3ms 1.16MB
+    heavy SteamManager.Update: n=396 10.5ms 0.31MB
+    heavy AICharacterControl.Update: n=2376 9.2ms 0.91MB
+    heavy Waypoint.ActivateSpawnersForCable: n=4655 3.0ms 0.25MB
+    heavy CablePositions.AssignNewPosition: n=9 1.5ms 0.02MB
+    heavy Technician.Update: n=2376 0.6ms 0.66MB
+    heavy CablePositions.RedrawCable: n=9 0.4ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=8 0.2ms 0.03MB
+    heavy CablePositions.CreateTubeMesh: n=4 0.1ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=4 0.0ms 0.00MB
+[124.01] SPIKE 51.4ms  frame=10770  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[125.41] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.18ms over 5 frame(s), 5 burst(s), session_calls=57330
+    burst cadence: 1.01s, 1.02s, 0.99s, 1.01s, 1.01s
+[125.41] ALLOC 264.54MB in 5.0s = 52.88MB/s | gc 4x freed 221.8MB | probe_cost 0.97ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 17.16MB (3513.6 KB/frame)
+    quiet   frames n=485 247.39MB (522.3 KB/frame)
+[125.41] ROPES census=1/0 Rope.Update=495 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[125.41] CABLES RedrawCable=5 CreateTubeMesh=3 GenerateFinalPath=3 (0.6 tube/s) session: redraw=1722 tube=1676
+[125.41] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=83 (620.2ms, 202.8MB) sysupdate=495 | session eval=1 movenext=1822
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 15.2ms 0.00MB
+    heavy SteamManager.Update: n=495 12.8ms 0.38MB
+    heavy AICharacterControl.Update: n=2970 11.0ms 0.50MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.9ms 0.06MB
+    heavy CablePositions.AssignNewPosition: n=5 1.0ms 0.01MB
+    heavy Technician.Update: n=2970 0.7ms 0.56MB
+    heavy CablePositions.RedrawCable: n=5 0.3ms 0.01MB
+    heavy Waypoint.CreateSpawner: n=6 0.1ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=3 0.1ms 0.01MB
+    heavy CablePositions.GenerateFinalPath: n=3 0.0ms 0.00MB
+[127.63] SPIKE 60.1ms  frame=11190  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[129.38] SPIKE 59.5ms  frame=11356  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[129.78] SPIKE 50.6ms  frame=11380  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[130.41] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.24ms over 5 frame(s), 5 burst(s), session_calls=59780
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.01s, 1.00s
+[130.41] ALLOC 176.78MB in 5.0s = 35.35MB/s | gc 3x freed 196.1MB | probe_cost 0.97ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.73MB (968.8 KB/frame)
+    quiet   frames n=502 172.05MB (350.9 KB/frame)
+[130.41] ROPES census=1/0 Rope.Update=511 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[130.41] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=50 (383.1ms, 134.4MB) sysupdate=511 | session eval=1 movenext=1872
+    heavy SteamManager.Update: n=511 12.6ms 0.22MB
+    heavy AICharacterControl.Update: n=3066 11.3ms 0.50MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 10.0ms 0.00MB
+    heavy Waypoint.ActivateSpawnersForCable: n=1862 1.2ms 0.00MB
+    heavy Technician.Update: n=3066 0.7ms 0.12MB
+[131.00] SPIKE 60.8ms  frame=11492  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[131.44] SPIKE 71.6ms  frame=11515  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[132.33] SPIKE 62.0ms  frame=11601  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[132.47] SPIKE 132.4ms  frame=11603  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[133.67] SPIKE 59.0ms  frame=11708  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[134.97] SPIKE 58.5ms  frame=11819  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[135.44] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.45ms over 5 frame(s), 5 burst(s), session_calls=62230
+    burst cadence: 1.04s, 0.99s, 1.01s, 1.01s, 1.04s
+[135.44] ALLOC 349.00MB in 5.0s = 69.41MB/s | gc 5x freed 398.9MB | probe_cost 0.83ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 29.82MB (6106.4 KB/frame)
+    quiet   frames n=393 319.18MB (831.7 KB/frame)
+[135.44] ROPES census=1/0 Rope.Update=404 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[135.44] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=88 (837.0ms, 278.0MB) sysupdate=404 | session eval=1 movenext=1960
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 20.3ms 1.00MB
+    heavy SteamManager.Update: n=404 10.9ms 0.38MB
+    heavy AICharacterControl.Update: n=2424 9.1ms 0.56MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.4ms 0.12MB
+    heavy Technician.Update: n=2424 0.6ms 0.38MB
+[137.14] SPIKE 57.4ms  frame=12018  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[138.65] SPIKE 59.5ms  frame=12148  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[139.07] SPIKE 53.6ms  frame=12172  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[140.28] SPIKE 60.0ms  frame=12286  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[140.46] SPIKE 51.1ms  frame=12298  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[140.46] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.96ms over 5 frame(s), 5 burst(s), session_calls=64680
+    burst cadence: 0.97s, 1.04s, 0.98s, 1.01s, 1.02s
+[140.46] ALLOC 209.46MB in 5.0s = 41.73MB/s | gc 2x freed 111.1MB | probe_cost 0.83ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 11.39MB (2333.6 KB/frame)
+    quiet   frames n=445 198.07MB (455.8 KB/frame)
+[140.46] ROPES census=1/0 Rope.Update=453 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[140.46] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=62 (426.4ms, 140.0MB) sysupdate=453 | session eval=1 movenext=2022
+    heavy SteamManager.Update: n=453 11.5ms 0.19MB
+    heavy AICharacterControl.Update: n=2718 10.6ms 0.81MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 9.7ms 0.00MB
+    heavy Waypoint.ActivateSpawnersForCable: n=1862 1.2ms 0.06MB
+    heavy Technician.Update: n=2718 0.7ms 0.34MB
+[140.70] SPIKE 55.6ms  frame=12306  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[141.99] SPIKE 60.3ms  frame=12432  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[143.31] SPIKE 57.4ms  frame=12544  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[143.51] SPIKE 68.7ms  frame=12555  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[144.80] SPIKE 74.7ms  frame=12666  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[145.30] SPIKE 60.5ms  frame=12693  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[145.46] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.56ms over 5 frame(s), 5 burst(s), session_calls=67130
+    burst cadence: 1.00s, 1.02s, 1.01s, 1.01s, 1.00s
+[145.46] ALLOC 328.32MB in 5.0s = 65.64MB/s | gc 5x freed 450.4MB | probe_cost 1.50ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 11.69MB (2393.6 KB/frame)
+    quiet   frames n=396 316.64MB (818.8 KB/frame)
+[145.46] ROPES census=1/0 Rope.Update=407 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[145.46] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=82 (772.5ms, 264.5MB) sysupdate=407 | session eval=1 movenext=2104
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 19.9ms 0.00MB
+    heavy SteamManager.Update: n=407 11.2ms 0.31MB
+    heavy AICharacterControl.Update: n=2442 9.8ms 1.81MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.5ms 0.06MB
+    heavy Technician.Update: n=2442 0.6ms 0.66MB
+[147.27] SPIKE 59.0ms  frame=12893  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[149.18] SPIKE 56.8ms  frame=13065  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[149.58] SPIKE 54.1ms  frame=13089  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[150.46] TICKS calls=1960 (NetworkSwitch=544 Server=1416) cost=0.92ms over 4 frame(s), 4 burst(s), session_calls=69090
+    burst cadence: 1.01s, 1.03s, 0.99s, 1.04s
+[150.46] ALLOC 162.27MB in 5.0s = 32.42MB/s | gc 2x freed 91.4MB | probe_cost 0.74ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=4 25.18MB (6446.0 KB/frame)
+    quiet   frames n=474 137.09MB (296.2 KB/frame)
+[150.47] ROPES census=1/0 Rope.Update=481 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[150.47] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=50 (410.1ms, 129.2MB) sysupdate=481 | session eval=1 movenext=2154
+    heavy SteamManager.Update: n=481 12.0ms 0.06MB
+    heavy AICharacterControl.Update: n=2886 10.8ms 0.34MB
+    heavy Waypoint.UpdateAllUI.MoveNext: n=2 10.1ms 1.00MB
+    heavy Waypoint.ActivateSpawnersForCable: n=1862 1.2ms 0.03MB
+    heavy Technician.Update: n=2886 0.7ms 0.28MB
+[150.74] SPIKE 56.7ms  frame=13213  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[152.46] SPIKE 59.4ms  frame=13379  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[152.62] SPIKE 112.8ms  frame=13385  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[153.95] SPIKE 58.1ms  frame=13508  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[154.37] SPIKE 56.1ms  frame=13533  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[155.47] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.80ms over 5 frame(s), 5 burst(s), session_calls=71540
+    burst cadence: 0.98s, 1.00s, 1.01s, 1.00s, 1.00s
+[155.47] ALLOC 253.39MB in 5.0s = 50.65MB/s | gc 4x freed 232.6MB | probe_cost 0.94ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 18.64MB (3816.8 KB/frame)
+    quiet   frames n=465 234.76MB (517.0 KB/frame)
+[155.47] ROPES census=1/0 Rope.Update=475 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[155.47] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=65 (630.6ms, 192.4MB) sysupdate=475 | session eval=1 movenext=2219
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.6ms 0.00MB
+    heavy SteamManager.Update: n=475 12.3ms 0.16MB
+    heavy AICharacterControl.Update: n=2850 10.8ms 0.53MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.8ms 0.09MB
+    heavy Technician.Update: n=2850 0.7ms 0.28MB
+[155.68] SPIKE 59.4ms  frame=13681  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[156.10] SPIKE 55.0ms  frame=13705  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[157.30] SPIKE 60.4ms  frame=13837  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[157.72] SPIKE 58.6ms  frame=13863  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[159.55] SPIKE 59.7ms  frame=14052  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[159.69] SPIKE 135.2ms  frame=14054  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[160.47] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.58ms over 5 frame(s), 5 burst(s), session_calls=73990
+    burst cadence: 1.00s, 1.00s, 1.05s, 0.99s, 1.00s
+[160.47] ALLOC 264.79MB in 5.0s = 52.90MB/s | gc 3x freed 211.4MB | probe_cost 0.70ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=4 20.96MB (5366.0 KB/frame)
+    quiet   frames n=443 243.82MB (563.6 KB/frame)
+[160.47] ROPES census=1/0 Rope.Update=451 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[160.47] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=66 (646.5ms, 197.3MB) sysupdate=451 | session eval=1 movenext=2285
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 13.3ms 0.00MB
+    heavy SteamManager.Update: n=451 11.5ms 0.28MB
+    heavy AICharacterControl.Update: n=2706 10.1ms 0.44MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.7ms 0.12MB
+    heavy Technician.Update: n=2706 0.7ms 0.41MB
+[163.47] ===== PHASE 3 ===== (wall clock 21:53:20)
+[165.48] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.37ms over 5 frame(s), 5 burst(s), session_calls=76440
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.00s, 1.00s
+[165.48] ALLOC 6.53MB in 5.0s = 1.31MB/s | gc 0x freed 0.0MB | probe_cost 0.56ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.61MB (1148.0 KB/frame)
+    quiet   frames n=478 0.93MB (2.0 KB/frame)
+[165.48] ROPES census=1/0 Rope.Update=484 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+    heavy SteamManager.Update: n=484 12.5ms 0.03MB
+    heavy AICharacterControl.Update: n=2904 11.3ms 0.03MB
+    heavy Technician.Update: n=2904 0.7ms 0.03MB
+[168.29] SPIKE 55.3ms  frame=14860  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[170.49] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.42ms over 5 frame(s), 5 burst(s), session_calls=78890
+    burst cadence: 1.00s, 1.00s, 1.00s, 1.00s, 1.01s
+[170.49] ALLOC 251.48MB in 5.0s = 50.14MB/s | gc 4x freed 379.3MB | probe_cost 0.86ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 5.74MB (1175.2 KB/frame)
+    quiet   frames n=429 245.75MB (586.6 KB/frame)
+[170.49] ROPES census=1/0 Rope.Update=439 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[170.49] CABLES RedrawCable=7 CreateTubeMesh=3 GenerateFinalPath=3 (0.6 tube/s) session: redraw=1729 tube=1679
+[170.49] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=82 (681.1ms, 202.7MB) sysupdate=439 | session eval=1 movenext=2367
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.0ms 1.03MB
+    heavy SteamManager.Update: n=439 11.4ms 0.06MB
+    heavy AICharacterControl.Update: n=2634 10.1ms 0.59MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.7ms 0.12MB
+    heavy CablePositions.AssignNewPosition: n=7 1.2ms 0.02MB
+    heavy Technician.Update: n=2634 0.6ms 0.34MB
+    heavy CablePositions.RedrawCable: n=7 0.3ms 0.01MB
+    heavy Waypoint.CreateSpawner: n=6 0.1ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=3 0.1ms 0.01MB
+    heavy CablePositions.GenerateFinalPath: n=3 0.0ms 0.00MB
+[173.47] SPIKE 52.0ms  frame=15276  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[174.47] SPIKE 51.4ms  frame=15365  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[175.45] SPIKE 57.4ms  frame=15456  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[175.50] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.29ms over 5 frame(s), 5 burst(s), session_calls=81340
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.00s, 1.00s
+[175.50] ALLOC 436.47MB in 5.0s = 87.17MB/s | gc 5x freed 307.6MB | probe_cost 1.40ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.60MB (942.4 KB/frame)
+    quiet   frames n=413 431.87MB (1070.8 KB/frame)
+[175.50] ROPES census=1/0 Rope.Update=424 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[175.50] CABLES RedrawCable=10 CreateTubeMesh=5 GenerateFinalPath=5 (1.0 tube/s) session: redraw=1739 tube=1684
+[175.50] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=133 (1009.9ms, 333.4MB) sysupdate=424 | session eval=1 movenext=2500
+    heavy Waypoint.UpdateAllUI.MoveNext: n=5 24.8ms 0.00MB
+    heavy SteamManager.Update: n=424 11.5ms 0.50MB
+    heavy AICharacterControl.Update: n=2544 9.7ms 1.50MB
+    heavy Waypoint.ActivateSpawnersForCable: n=4655 3.1ms 0.09MB
+    heavy CablePositions.AssignNewPosition: n=10 1.8ms 0.04MB
+    heavy Technician.Update: n=2544 0.6ms 1.00MB
+    heavy CablePositions.RedrawCable: n=10 0.5ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=10 0.2ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=5 0.2ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=5 0.0ms 0.00MB
+[178.46] SPIKE 50.1ms  frame=15705  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[179.46] SPIKE 51.4ms  frame=15787  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[180.48] SPIKE 50.2ms  frame=15873  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[180.53] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.23ms over 5 frame(s), 5 burst(s), session_calls=83790
+    burst cadence: 1.00s, 1.00s, 1.01s, 1.00s, 1.01s
+[180.53] ALLOC 420.19MB in 5.0s = 83.78MB/s | gc 6x freed 506.6MB | probe_cost 1.83ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.29MB (877.6 KB/frame)
+    quiet   frames n=403 415.90MB (1056.8 KB/frame)
+[180.53] ROPES census=1/0 Rope.Update=415 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[180.53] CABLES RedrawCable=11 CreateTubeMesh=6 GenerateFinalPath=6 (1.2 tube/s) session: redraw=1750 tube=1690
+[180.53] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=139 (1057.7ms, 334.1MB) sysupdate=415 | session eval=1 movenext=2639
+    heavy Waypoint.UpdateAllUI.MoveNext: n=5 24.0ms 1.03MB
+    heavy SteamManager.Update: n=415 10.8ms 0.56MB
+    heavy AICharacterControl.Update: n=2490 9.2ms 0.81MB
+    heavy CablePositions.AssignNewPosition: n=11 3.1ms 0.32MB
+    heavy Waypoint.ActivateSpawnersForCable: n=4655 3.1ms 0.22MB
+    heavy CablePositions.RedrawCable: n=11 0.9ms 0.12MB
+    heavy Technician.Update: n=2490 0.6ms 0.69MB
+    heavy Waypoint.CreateSpawner: n=12 0.4ms 0.03MB
+    heavy CablePositions.CreateTubeMesh: n=6 0.4ms 0.08MB
+    heavy CablePositions.GenerateFinalPath: n=6 0.2ms 0.01MB
+[182.48] SPIKE 52.4ms  frame=16031  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[183.50] SPIKE 60.5ms  frame=16112  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[184.76] SPIKE 98.2ms  frame=16223  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[185.03] SPIKE 56.6ms  frame=16232  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[185.52] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.75ms over 5 frame(s), 5 burst(s), session_calls=86240
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.00s, 1.00s
+[185.52] ALLOC 349.12MB in 5.0s = 69.72MB/s | gc 4x freed 269.9MB | probe_cost 0.99ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 16.32MB (3342.4 KB/frame)
+    quiet   frames n=391 332.80MB (871.6 KB/frame)
+[185.52] ROPES census=1/0 Rope.Update=401 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[185.52] CABLES RedrawCable=8 CreateTubeMesh=4 GenerateFinalPath=4 (0.8 tube/s) session: redraw=1758 tube=1694
+[185.52] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=99 (871.0ms, 264.8MB) sysupdate=401 | session eval=1 movenext=2738
+    heavy Waypoint.UpdateAllUI.MoveNext: n=5 27.3ms 0.97MB
+    heavy SteamManager.Update: n=401 10.9ms 0.47MB
+    heavy AICharacterControl.Update: n=2406 9.5ms 0.84MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.3ms 0.09MB
+    heavy CablePositions.AssignNewPosition: n=8 1.4ms 0.02MB
+    heavy Technician.Update: n=2406 0.5ms 0.47MB
+    heavy CablePositions.RedrawCable: n=8 0.4ms 0.02MB
+    heavy Waypoint.CreateSpawner: n=8 0.3ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=4 0.1ms 0.02MB
+    heavy CablePositions.GenerateFinalPath: n=4 0.0ms 0.00MB
+[185.76] SPIKE 97.5ms  frame=16290  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[186.76] SPIKE 95.7ms  frame=16358  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[187.13] SPIKE 51.8ms  frame=16370  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[187.80] SPIKE 134.2ms  frame=16422  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[188.06] SPIKE 51.4ms  frame=16431  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[190.53] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=2.20ms over 5 frame(s), 5 burst(s), session_calls=88690
+    burst cadence: 1.00s, 1.01s, 1.00s, 1.00s, 1.00s
+[190.53] ALLOC 331.78MB in 5.0s = 66.25MB/s | gc 5x freed 453.1MB | probe_cost 0.71ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 38.34MB (7851.2 KB/frame)
+    quiet   frames n=402 293.45MB (747.5 KB/frame)
+[190.53] ROPES census=1/0 Rope.Update=413 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[190.53] CABLES RedrawCable=6 CreateTubeMesh=3 GenerateFinalPath=3 (0.6 tube/s) session: redraw=1764 tube=1697
+[190.53] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=81 (894.1ms, 259.1MB) sysupdate=413 | session eval=1 movenext=2819
+    heavy Waypoint.UpdateAllUI.MoveNext: n=4 19.1ms 0.00MB
+    heavy SteamManager.Update: n=413 10.6ms 0.12MB
+    heavy AICharacterControl.Update: n=2478 9.4ms 0.59MB
+    heavy Waypoint.ActivateSpawnersForCable: n=3724 2.3ms 0.09MB
+    heavy CablePositions.AssignNewPosition: n=6 0.9ms 0.02MB
+    heavy Technician.Update: n=2478 0.5ms 0.38MB
+    heavy CablePositions.RedrawCable: n=6 0.3ms 0.01MB
+    heavy Waypoint.CreateSpawner: n=6 0.1ms 0.00MB
+    heavy CablePositions.CreateTubeMesh: n=3 0.1ms 0.01MB
+    heavy CablePositions.GenerateFinalPath: n=3 0.0ms 0.00MB
+[190.68] SPIKE 60.8ms  frame=16700  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[190.82] SPIKE 142.3ms  frame=16701  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[192.42] SPIKE 58.3ms  frame=16861  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[193.85] SPIKE 58.6ms  frame=16997  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[194.28] SPIKE 51.1ms  frame=17022  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[195.24] SPIKE 65.3ms  frame=17123  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[195.55] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.30ms over 5 frame(s), 5 burst(s), session_calls=91140
+    burst cadence: 1.01s, 0.99s, 1.05s, 0.98s, 1.00s
+[195.55] ALLOC 321.56MB in 5.0s = 64.05MB/s | gc 5x freed 258.5MB | probe_cost 1.13ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=4 8.70MB (2226.0 KB/frame)
+    quiet   frames n=445 312.87MB (719.9 KB/frame)
+[195.55] ROPES census=1/0 Rope.Update=455 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[195.55] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=88 (727.9ms, 255.4MB) sysupdate=455 | session eval=1 movenext=2907
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.2ms 1.19MB
+    heavy SteamManager.Update: n=455 11.3ms 0.28MB
+    heavy AICharacterControl.Update: n=2730 10.0ms 0.69MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.7ms 0.00MB
+    heavy Technician.Update: n=2730 0.5ms 0.84MB
+[195.67] SPIKE 53.9ms  frame=17146  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[197.24] SPIKE 57.9ms  frame=17320  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[199.12] SPIKE 73.1ms  frame=17497  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[200.56] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.31ms over 5 frame(s), 5 burst(s), session_calls=93590
+    burst cadence: 1.01s, 1.00s, 1.01s, 1.01s, 1.01s
+[200.56] ALLOC 185.34MB in 5.0s = 37.03MB/s | gc 3x freed 304.1MB | probe_cost 0.67ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 4.56MB (933.6 KB/frame)
+    quiet   frames n=461 180.78MB (401.6 KB/frame)
+[200.56] ROPES census=1/0 Rope.Update=470 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[200.56] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=56 (583.0ms, 146.4MB) sysupdate=470 | session eval=1 movenext=2963
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 15.2ms 0.00MB
+    heavy SteamManager.Update: n=470 12.2ms 0.72MB
+    heavy AICharacterControl.Update: n=2820 10.6ms 0.34MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.8ms 0.06MB
+    heavy Technician.Update: n=2820 0.5ms 0.06MB
+[201.25] SPIKE 59.0ms  frame=17683  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[201.66] SPIKE 52.1ms  frame=17706  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[202.84] SPIKE 60.2ms  frame=17817  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[204.45] SPIKE 61.1ms  frame=17959  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[204.87] SPIKE 60.9ms  frame=17982  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[205.56] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.23ms over 5 frame(s), 5 burst(s), session_calls=96040
+    burst cadence: 1.01s, 1.01s, 1.00s, 1.01s, 1.03s
+[205.56] ALLOC 243.40MB in 5.0s = 48.60MB/s | gc 5x freed 217.1MB | probe_cost 0.79ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 15.54MB (3183.2 KB/frame)
+    quiet   frames n=430 227.86MB (542.6 KB/frame)
+[205.56] ROPES census=1/0 Rope.Update=441 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[205.57] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=72 (633.5ms, 188.2MB) sysupdate=441 | session eval=1 movenext=3035
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 15.7ms 0.00MB
+    heavy SteamManager.Update: n=441 11.7ms 0.09MB
+    heavy AICharacterControl.Update: n=2646 10.1ms 0.50MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.7ms 0.12MB
+    heavy Technician.Update: n=2646 0.5ms 0.31MB
+[206.05] SPIKE 58.6ms  frame=18105  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[206.46] SPIKE 50.9ms  frame=18130  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[207.59] SPIKE 59.5ms  frame=18245  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[208.00] SPIKE 57.0ms  frame=18270  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[209.45] SPIKE 58.1ms  frame=18427  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[209.87] SPIKE 57.4ms  frame=18452  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[210.57] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.21ms over 5 frame(s), 5 burst(s), session_calls=98490
+    burst cadence: 0.98s, 1.01s, 1.02s, 0.99s, 1.05s
+[210.57] ALLOC 257.82MB in 5.0s = 51.53MB/s | gc 3x freed 152.3MB | probe_cost 0.89ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 25.21MB (5162.4 KB/frame)
+    quiet   frames n=465 232.62MB (512.3 KB/frame)
+[210.57] ROPES census=1/0 Rope.Update=474 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[210.57] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=78 (619.1ms, 191.2MB) sysupdate=474 | session eval=1 movenext=3113
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 14.0ms 1.25MB
+    heavy SteamManager.Update: n=474 11.8ms 0.25MB
+    heavy AICharacterControl.Update: n=2844 10.3ms 0.69MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.6ms 0.00MB
+    heavy Technician.Update: n=2844 0.5ms 0.56MB
+[210.84] SPIKE 59.8ms  frame=18555  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[210.97] SPIKE 121.5ms  frame=18556  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[211.34] SPIKE 67.5ms  frame=18572  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[212.33] SPIKE 57.6ms  frame=18675  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[213.71] SPIKE 58.6ms  frame=18799  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[214.13] SPIKE 74.1ms  frame=18822  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[215.40] SPIKE 56.2ms  frame=18950  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[215.58] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.92ms over 5 frame(s), 5 burst(s), session_calls=100940
+    burst cadence: 0.99s, 1.00s, 1.00s, 1.01s, 1.01s
+[215.58] ALLOC 229.84MB in 5.0s = 45.81MB/s | gc 5x freed 303.6MB | probe_cost 1.48ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 17.55MB (3595.2 KB/frame)
+    quiet   frames n=428 212.28MB (507.9 KB/frame)
+[215.58] ROPES census=1/0 Rope.Update=439 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[215.59] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=84 (672.5ms, 182.7MB) sysupdate=439 | session eval=1 movenext=3197
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 15.1ms 0.00MB
+    heavy SteamManager.Update: n=439 11.7ms 0.12MB
+    heavy AICharacterControl.Update: n=2634 10.1ms 0.94MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.8ms 0.06MB
+    heavy Technician.Update: n=2634 0.5ms 0.25MB
+[215.81] SPIKE 50.9ms  frame=18974  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=0
+[216.82] SPIKE 57.8ms  frame=19072  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[216.98] SPIKE 100.0ms  frame=19079  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[217.24] SPIKE 51.7ms  frame=19088  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=980
+[219.90] SPIKE 56.8ms  frame=19372  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1960
+[220.05] SPIKE 147.9ms  frame=19374  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[220.13] SPIKE 52.1ms  frame=19377  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[220.32] SPIKE 51.1ms  frame=19383  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[220.59] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.93ms over 5 frame(s), 5 burst(s), session_calls=103390
+    burst cadence: 1.01s, 1.01s, 1.01s, 1.00s, 1.02s
+[220.59] ALLOC 213.80MB in 5.0s = 42.69MB/s | gc 3x freed 150.6MB | probe_cost 0.69ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 34.81MB (7128.8 KB/frame)
+    quiet   frames n=430 179.00MB (426.3 KB/frame)
+[220.59] ROPES census=1/0 Rope.Update=439 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[220.59] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=37 (573.2ms, 179.5MB) sysupdate=439 | session eval=1 movenext=3234
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 13.8ms 0.00MB
+    heavy SteamManager.Update: n=439 11.3ms 0.06MB
+    heavy AICharacterControl.Update: n=2634 9.9ms 0.19MB
+    heavy Waypoint.ActivateSpawnersForCable: n=2793 1.7ms 0.12MB
+    heavy Technician.Update: n=2634 0.5ms 0.19MB
+[221.39] SPIKE 60.7ms  frame=19488  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[221.80] SPIKE 54.2ms  frame=19513  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=490
+[223.28] SPIKE 60.3ms  frame=19656  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[223.69] SPIKE 58.3ms  frame=19680  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=1470
+[225.47] SPIKE 60.3ms  frame=19849  created_since_flush=0 destroyed_since_flush=0 tickcalls_since_flush=2450
+[225.59] TICKS calls=2450 (NetworkSwitch=680 Server=1770) cost=1.29ms over 5 frame(s), 5 burst(s), session_calls=105840
+    burst cadence: 1.00s, 1.00s, 1.01s, 1.00s, 1.01s
+[225.59] ALLOC 185.32MB in 5.0s = 37.06MB/s | gc 3x freed 183.0MB | probe_cost 1.03ms
+    ropegen frames n=0 0.00MB (- KB/frame)
+    tick    frames n=5 3.53MB (723.2 KB/frame)
+    quiet   frames n=446 181.79MB (417.4 KB/frame)
+[225.59] ROPES census=1/0 Rope.Update=455 (1/frame) RopeMesh.Update=0 (0/frame)
+    GenerateMesh=0 (0.0/frame) CreateRopeMesh=0 (0.0/frame)   <- ropes are NOT regenerating; not the alloc source
+[225.59] ROUTES request=0 eval=0 (0.0ms) coroutine_movenext=64 (415.7ms, 126.7MB) sysupdate=455 | session eval=1 movenext=3298
+    heavy Waypoint.UpdateAllUI.MoveNext: n=3 13.7ms 0.97MB
+    heavy SteamManager.Update: n=455 11.7ms 0.16MB
+    heavy AICharacterControl.Update: n=2730 10.4ms 0.38MB
+    heavy Waypoint.ActivateSpawnersForCable: n=1862 1.2ms 0.03MB
+    heavy Technician.Update: n=2730 0.5ms 0.56MB
+[229.05] session end
