@@ -3,7 +3,7 @@
 # Run with the game CLOSED - loaded DLLs are file-locked.
 set -e
 MODS="/c/Program Files (x86)/Steam/steamapps/common/Data Center/Mods"
-DIS="/c/Users/user/datacenter-mods-disabled"
+DIS="$HOME/datacenter-mods-disabled"
 
 if tasklist //FI "IMAGENAME eq Data Center.exe" 2>/dev/null | grep -qi "data center"; then
   echo "Data Center is running - close it first." >&2
